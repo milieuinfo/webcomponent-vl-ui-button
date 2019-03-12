@@ -1,0 +1,23 @@
+{
+  "name": "vl-ui-button",
+  "version": "0.0.1",
+  "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
+  "main": "vl-button.js",
+  "author": "DIDM",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "npm run prepare:sass",
+    "prepare:sass": "sass style.scss style.css --load-path node_modules/@govflanders",
+    "test": "wct -l chrome,firefox --npm"
+  },
+  "dependencies": {
+    "@govflanders/vl-ui-button": "3.7.1",
+    "@govflanders/vl-ui-core": "3.7.1",
+    "@govflanders/vl-ui-icon": "3.7.1",
+    "@govflanders/vl-ui-util": "3.7.1"
+  },
+  "devDependencies": {
+    "wct-browser-legacy": "1.0.2",
+    "web-component-tester": "6.9.2"
+  }
+}
