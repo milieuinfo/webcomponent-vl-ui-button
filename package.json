@@ -11,10 +11,10 @@
     "test": "wct -l chrome,firefox --npm"
   },
   "dependencies": {
-    "@govflanders/vl-ui-button": "3.7.1",
-    "@govflanders/vl-ui-core": "3.7.1",
-    "@govflanders/vl-ui-icon": "3.7.1",
-    "@govflanders/vl-ui-util": "3.7.1"
+    "@govflanders/vl-ui-button": "3.7.2",
+    "@govflanders/vl-ui-core": "3.7.2",
+    "@govflanders/vl-ui-icon": "3.7.2",
+    "@govflanders/vl-ui-util": "3.7.2"
   },
   "devDependencies": {
     "wct-browser-legacy": "1.0.2",

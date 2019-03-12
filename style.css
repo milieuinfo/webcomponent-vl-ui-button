@@ -87,6 +87,12 @@ button {
 img {
   max-width: 100%; }
 
+:-moz-submit-invalid {
+  box-shadow: none; }
+
+:-moz-ui-invalid {
+  box-shadow: none; }
+
 * {
   box-sizing: border-box; }
   *::before, *::after {
