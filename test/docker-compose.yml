@@ -1,17 +1,17 @@
 version: "3"
 services:
   selenium-hub:
-    image: ${DOCKER_REGISTRY}selenium/hub:3.141.0-actinium
+    image: ${DOCKER_REGISTRY}selenium/hub:3.141.59
     container_name: selenium-hub
   selenium-chrome:
-    image: ${DOCKER_REGISTRY}selenium/node-chrome:3.141.0-actinium
+    image: ${DOCKER_REGISTRY}selenium/node-chrome:3.141.59
     depends_on:
       - selenium-hub
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   selenium-firefox:
-    image: ${DOCKER_REGISTRY}selenium/node-firefox:3.4.0
+    image: ${DOCKER_REGISTRY}selenium/node-firefox:3.141.59
     depends_on:
       - selenium-hub
     environment:
