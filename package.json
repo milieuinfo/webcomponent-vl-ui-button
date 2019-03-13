@@ -6,8 +6,19 @@
   "author": "DIDM",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run prepare:sass",
+    "prepare": "npm run prepare:sass && npm run prepare:fonts",
     "prepare:sass": "sass style.scss style.css --load-path node_modules/@govflanders",
+    "prepare:fonts": "npm run prepare:font:path && npm run prepare:font:flanders-sans-light && npm run prepare:font:flanders-sans-regular && npm run prepare:font:flanders-sans-medium && npm run prepare:font:flanders-sans-bold && npm run prepare:font:flanders-serif-light && npm run prepare:font:flanders-serif-regular && npm run prepare:font:flanders-serif-medium && npm run prepare:font:flanders-serif-bold && npm run prepare:font:vlaanderen-icon",
+    "prepare:font:path": "replace 'https://d1l6j3bn1os9t0.cloudfront.net/3.latest/fonts/flanders/' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/' style.css",
+    "prepare:font:flanders-sans-light": "replace 'flanders-sans-light.woff' 'FlandersArtSans-Regular.woff' style.css",
+    "prepare:font:flanders-sans-regular": "replace 'flanders-sans-regular.woff' 'FlandersArtSans-Regular.woff' style.css",
+    "prepare:font:flanders-sans-medium": "replace 'flanders-sans-medium.woff' 'FlandersArtSans-Medium.woff' style.css",
+    "prepare:font:flanders-sans-bold": "replace 'flanders-sans-bold.woff' 'FlandersArtSans-Bold.woff' style.css",
+    "prepare:font:flanders-serif-light": "replace 'flanders-serif-light.woff' 'FlandersArtSerif-Light.woff' style.css",
+    "prepare:font:flanders-serif-regular": "replace 'flanders-serif-regular.woff' 'FlandersArtSerif-Regular.woff' style.css",
+    "prepare:font:flanders-serif-medium": "replace 'flanders-serif-medium.woff' 'FlandersArtSerif-Medium.woff' style.css",
+    "prepare:font:flanders-serif-bold": "replace 'flanders-serif-bold.woff' 'FlandersArtSerif-Bold.woff' style.css",
+    "prepare:font:vlaanderen-icon": "replace '/font/vlaanderen-icon.woff' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/vlaanderen-icon.woff' style.css",
     "test": "wct -l chrome,firefox --npm"
   },
   "dependencies": {
@@ -18,6 +29,7 @@
   },
   "devDependencies": {
     "wct-browser-legacy": "1.0.2",
-    "web-component-tester": "6.9.2"
+    "web-component-tester": "6.9.2",
+    "replace": "1.0.0"
   }
 }
