@@ -5,6 +5,11 @@
   "main": "vl-button.js",
   "author": "DIDM",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-button.git"
+  },
+  "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-button#readme",
   "scripts": {
     "prepare": "npm run prepare:sass && npm run prepare:fonts",
     "prepare:sass": "sass style.scss style.css --load-path node_modules/@govflanders",
