@@ -10,6 +10,9 @@
     "url": "git+https://github.com/milieuinfo/webcomponent-vl-ui-button.git"
   },
   "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-button#readme",
+  "publishConfig": {
+    "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
+  },
   "scripts": {
     "prepare": "npm run prepare:sass && npm run prepare:fonts",
     "prepare:sass": "sass style.scss style.css --load-path node_modules/@govflanders",
