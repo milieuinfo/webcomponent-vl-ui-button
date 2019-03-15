@@ -30,8 +30,8 @@
     "prepare:font:vlaanderen-icon": "replace '/font/vlaanderen-icon.woff' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/vlaanderen-icon.woff' style.css",
     "test": "wct -l chrome,firefox --npm",
     "release": "np",
-    "release:testless": "np --yolo",
-    "prepublishOnly": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js"
+    "release:prepare": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js",
+    "release:testless": "np --yolo"
   },
   "dependencies": {
     "@govflanders/vl-ui-button": "3.7.2",
