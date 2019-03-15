@@ -5,7 +5,7 @@
     <script src="../../@webcomponents/webcomponentsjs/webcomponents-lite.js"></script> 
     <script src="../../web-component-tester/browser.js"></script> 
 
-    <script src="../vl-button.src.js"></script>
+    <script type="module" src="../vl-button.src.js"></script>
   </head>
   <body>
     <test-fixture id="vl-button-fixture">
@@ -20,7 +20,6 @@
 
         test('heeft de vl-button class', () => {
           const button = fixture('vl-button-fixture');
-          debugger
           assert.isTrue(button.classList.contains('vl-button'));
         });
 

@@ -1,3 +1,5 @@
+import './node_modules/vl-ui-core/vl-core.src.js';
+
 (() => {
     const id = 'vl-button-style';
     addStyle();
