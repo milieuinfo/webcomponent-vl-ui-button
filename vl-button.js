@@ -1,35 +1,56 @@
-/**
- * `vl-button``
- * Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
- * 
- * @demo demo/vl-button.html
- */
-class VlButton extends HTMLButtonElement {
-    static get attributes() {
-        return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary'];
-    }
+(() => {
+    const id = 'vl-button-style';
+    addStyle();
 
-    static get observedAttributes() {
-        return VlButton.attributes;
-    }
-
-    connectedCallback() {
-        this.classList.add('vl-button');
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        if (oldVal != newVal) {
-            VlButton.attributes.filter(attribute => {
-                return attribute == attrName;
-            }).forEach(attribute => {
-                if (this.getAttribute(attribute) != null) {
-                    this.classList.add('vl-button--' + attribute);
-                } else {
-                    this.classList.remove('vl-button--' + attribute);
-                }
-            });
+    function addStyle() {
+        if (!document.head.querySelector('#' + id)) {
+            var style = getStyle();
+            document.head.appendChild(style);
         }
     }
-}
 
-customElements.define('vl-button', VlButton, {extends: 'button'});
+    function getStyle() {
+        var link = document.createElement('link');
+        link.setAttribute('id', id);
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('type', 'text/css');
+        link.setAttribute('href', 'https://cdn.milieuinfo.be/webcomponent-vl-ui-button/' + 0.0.1 + '/style.css');
+        return link;
+    }
+
+    /**
+     * `vl-button``
+     * Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
+     * 
+     * @demo demo/vl-button.html
+     */
+    class VlButton extends HTMLButtonElement {
+        static get attributes() {
+            return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary'];
+        }
+
+        static get observedAttributes() {
+            return VlButton.attributes;
+        }
+
+        connectedCallback() {
+            this.classList.add('vl-button');
+        }
+
+        attributeChangedCallback(attrName, oldVal, newVal) {
+            if (oldVal != newVal) {
+                VlButton.attributes.filter(attribute => {
+                    return attribute == attrName;
+                }).forEach(attribute => {
+                    if (this.getAttribute(attribute) != null) {
+                        this.classList.add('vl-button--' + attribute);
+                    } else {
+                        this.classList.remove('vl-button--' + attribute);
+                    }
+                });
+            }
+        }
+    }
+
+    customElements.define('vl-button', VlButton, {extends: 'button'});
+})();
