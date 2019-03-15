@@ -1,5 +1,3 @@
-<snippet>
-    <content><![CDATA[
 # ${1:vl-button}
 De vl-button webcomponent laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.
 
@@ -13,7 +11,3 @@ Zie de lijst van [ontwikkelaars](https://github.com/milieuinfo/webcomponent-vl-u
 
 ## Contact
 Heb je suggesties, opmerkingen of tips? Voel je dan vrij om ons te contacteren via help@omgevingvlaanderen.be.
-]]>
-    </content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
