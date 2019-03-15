@@ -14,7 +14,7 @@
         link.setAttribute('id', id);
         link.setAttribute('rel', 'stylesheet');
         link.setAttribute('type', 'text/css');
-        link.setAttribute('href', 'https://cdn.milieuinfo.be/webcomponent-vl-ui-button/npm_package_version/style.css');
+        link.setAttribute('href', '../style.css');
         return link;
     }
 

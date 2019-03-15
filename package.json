@@ -31,7 +31,7 @@
     "test": "wct -l chrome,firefox --npm",
     "release": "np",
     "release:testless": "np --yolo",
-    "version": "replace 'npm_package_version' $npm_package_version vl-button.js"
+    "version": "replace '../style.css' https://cdn.milieuinfo.be/webcomponent-vl-ui-button/$npm_package_version/style.css vl-button.js"
   },
   "dependencies": {
     "@govflanders/vl-ui-button": "3.7.2",
