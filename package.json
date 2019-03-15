@@ -30,7 +30,7 @@
     "prepare:font:vlaanderen-icon": "replace '/font/vlaanderen-icon.woff' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/vlaanderen-icon.woff' style.css",
     "test": "wct -l chrome,firefox --npm",
     "release": "np",
-    "release:prepare": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js && git add vl-button.js && git commit --amend --no-edit",
+    "release:prepare": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js && git add vl-button.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo"
   },
   "dependencies": {
