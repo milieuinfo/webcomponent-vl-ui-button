@@ -14,7 +14,8 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "prepare": "npm run prepare:sass && npm run prepare:fonts",
+    "prepare": "npm run prepare:build && npm run prepare:sass && npm run prepare:fonts",
+    "prepare:build": "uglifyjs --compress --mangle --output vl-button.js -- *.src.js",
     "prepare:sass": "sass style.scss style.css --load-path node_modules/@govflanders",
     "prepare:fonts": "npm run prepare:font:path && npm run prepare:font:flanders-sans-light && npm run prepare:font:flanders-sans-regular && npm run prepare:font:flanders-sans-medium && npm run prepare:font:flanders-sans-bold && npm run prepare:font:flanders-serif-light && npm run prepare:font:flanders-serif-regular && npm run prepare:font:flanders-serif-medium && npm run prepare:font:flanders-serif-bold && npm run prepare:font:vlaanderen-icon",
     "prepare:font:path": "replace 'https://d1l6j3bn1os9t0.cloudfront.net/3.latest/fonts/flanders/' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/' style.css",
@@ -42,6 +43,7 @@
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
     "replace": "1.0.0",
-    "np": "3.0.4"
+    "np": "3.0.4",
+    "uglify-js-es6": "2.8.9"
   }
 }
