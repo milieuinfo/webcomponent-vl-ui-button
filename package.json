@@ -29,9 +29,9 @@
     "prepare:font:flanders-serif-bold": "replace 'flanders-serif-bold.woff' 'FlandersArtSerif-Bold.woff' style.css",
     "prepare:font:vlaanderen-icon": "replace '/font/vlaanderen-icon.woff' 'https://cdn.milieuinfo.be/vlaanderen-font/LATEST/font/flandersart/vlaanderen-icon.woff' style.css",
     "test": "wct -l chrome,firefox --npm",
-    "release": "np && npm run postversion",
-    "release:testless": "np --yolo && npm run postversion",
-    "postversion": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js"
+    "release": "np",
+    "release:testless": "np --yolo",
+    "prepublishOnly": "replace '../style.css' https://cdn.milieuinfo.be/vl-ui-button/$npm_package_version/style.css vl-button.js"
   },
   "dependencies": {
     "@govflanders/vl-ui-button": "3.7.2",
