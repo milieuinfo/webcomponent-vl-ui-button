@@ -19,7 +19,7 @@ import { VlElement } from '/node_modules/vl-ui-core/vl-core.src.js';
         link.setAttribute('href', '../style.css');
         return link;
     }
-});
+})();
 
 /**
  * `vl-button``
