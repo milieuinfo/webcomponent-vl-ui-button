@@ -4,6 +4,7 @@
     </head>
 
     <script type="module" src="../vl-button.src.js"></script>
+    <script type="module" src="../node_modules/vl-ui-icon/vl-icon.js"></script>
 
     <style>
         body {
@@ -17,58 +18,58 @@
     
 	<body>
         <div>
-            <button class="vl-button">Gegevens opslaan</button>
+            <button is="vl-button">Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--disabled" disabled>Gegevens opslaan</button>
+            <button is="vl-button" disabled>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--error">Gegevens opslaan</button>
+            <button is="vl-button" error>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--icon-after">Contactpersoon opslaan<i class="vl-button__icon vl-button__icon--after vl-vi vl-vi-location" aria-hidden="true"></i></button>
+            <button is="vl-button">Contactpersoon opslaan<vl-icon icon="location" after></vl-icon></button>
         </div>
         <div>
-            <button class="vl-button vl-button--icon-before"><i class="vl-button__icon vl-button__icon--before vl-vi vl-vi-location" aria-hidden="true"></i>Contactpersoon opslaan</button>
+            <button is="vl-button"><vl-icon icon="location" before></vl-icon>Contactpersoon opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--block">Gegevens opslaan</button>
+            <button is="vl-button" block>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--large">Gegevens opslaan</button>
+            <button is="vl-button" large>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--wide">Gegevens opslaan</button>
+            <button is="vl-button" wide>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--narrow">Gegevens opslaan</button>
+            <button is="vl-button" narrow>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--loading" disabled>Gegevens verwerken</button>
+            <button is="vl-button" loading disabled>Gegevens verwerken</button>
         </div>
         <div>
-            <button class="vl-button vl-button--secondary">Gegevens opslaan</button>
+            <button is="vl-button" secondary>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--secondary vl-button--icon-before"><i class="vl-button__icon vl-button__icon--before vl-vi vl-vi-location" aria-hidden="true"></i>Gegevens opslaan</button>
+            <button is="vl-button" secondary><vl-icon icon="location" before></vl-icon>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--secondary vl-button--error">Gegevens opslaan</button>
+            <button is="vl-button" secondary error>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--secondary vl-button--error vl-button--icon-before"><i class="vl-button__icon vl-button__icon--before vl-vi vl-vi-location" aria-hidden="true"></i>Gegevens opslaan</button>
+            <button is="vl-button" secondary error><vl-icon icon="location" before></vl-icon>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--tertiary">Gegevens opslaan</button>
+            <button is="vl-button" tertiary>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--tertiary vl-button--icon-before"><i class="vl-button__icon vl-button__icon--before vl-vi vl-vi-location" aria-hidden="true"></i>Gegevens opslaan</button>
+            <button is="vl-button" tertiary><vl-icon icon="location" before></vl-icon>Gegevens opslaan</button>
         </div>
         <div>
-            <button class="vl-button vl-button--tertiary vl-button--error">Gegevens verwerken</button>
+            <button is="vl-button" tertiary error>Gegevens verwerken</button>
         </div>
         <div>
-            <button class="vl-button vl-button--icon"><i class="vl-button__icon vl-vi vl-vi-location" aria-hidden="true"></i><span class="vl-u-hidden"></span></button>
+            <button is="vl-button"><vl-icon icon="location" before></vl-icon><span class="vl-u-hidden"></span></button>
         </div>
 	</body>
 </html>
