@@ -4,6 +4,9 @@ import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
  * VlButton
  * @class
  * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram. <a href="demo/vl-button.html">Demo</a>.
+ * 
+ * @extends NativeVlElement
+ * 
  * @property {boolean} disabled - Attribuut wordt gebruikt om aan de gebruiker aan te duiden dat de functionaliteit niet actief is.
  * @property {boolean} error - Attribuut wordt gebruikt om het belang of de gevolgen van een actie te benadrukken.
  * @property {boolean} block - Attribuut wordt gebruikt om ervoor te zorgen dat de knop getoond wordt als een block element en bijgevol de breedte van de parent zal aannemen.
