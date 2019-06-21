@@ -27,13 +27,15 @@
     "demo": "http-server"
   },
   "dependencies": {
-    "vl-ui-core": "1.4.1"
+    "vl-ui-core": "1.4.1",
+    "vl-ui-link": "1.0.3"
   },
   "peerDependencies": {
     "vl-ui-core": "^1.4.1"
   },
   "devDependencies": {
     "@govflanders/vl-ui-button": "3.7.2",
+    "@govflanders/vl-ui-link": "3.7.2",
     "@govflanders/vl-ui-core": "3.7.2",
     "@govflanders/vl-ui-icon": "3.7.2",
     "@govflanders/vl-ui-util": "3.7.2",

@@ -1,4 +1,5 @@
 import { NativeVlElement } from '/node_modules/vl-ui-core/vl-core.js';
+import {VlLink} from "/node_modules/vl-ui-link/vl-link.js";
 
 /**
  * VlButton
@@ -40,3 +41,4 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 }
 
 customElements.define('vl-button', VlButton, {extends: 'button'});
+customElements.define('vl-button-link', VlLink, {extends: 'button'});
