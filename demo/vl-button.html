@@ -6,6 +6,7 @@
 
     <script type="module" src="../vl-button.src.js"></script>
     <script type="module" src="../node_modules/vl-ui-icon/vl-icon.js"></script>
+    <script type="module" src="../node_modules/vl-ui-link/vl-link.js"></script>
     <script type="module" src="demo.js"></script>
 
 	<body>
@@ -234,11 +235,13 @@
             <h2>Button link</h2>
             <pre>
                 <code class="line-numbers language-markup">
-                    &lt;button is="vl-button"&gt;&lt;span is="vl-icon" icon="location" before&gt;&lt;/span&gt;&lt;span class="vl-u-hidden"&gt;&lt;/span&gt;&lt;/button&gt;
+                    &lt;a is="vl-link" block&gt;&lt;span is="vl-icon" icon="arrow-right-fat" before&gt;&lt;/span&gt;Demo link&lt;/a&gt;
+                    &lt;button is="vl-button-link" block&gt;&lt;span is="vl-icon" icon="arrow-right-fat" before&gt;&lt;/span&gt;Demo link&lt;/button&gt;
                 </code>
             </pre>
             <div class="demo">
-                <button is="vl-button-link"><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</button>
+                <a is="vl-link" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</a>
+                <button is="vl-button-link" block><span is="vl-icon" icon="arrow-right-fat" before></span>Demo link</button>
             </div>
         </div>
 	</body>
