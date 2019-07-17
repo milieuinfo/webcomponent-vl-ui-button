@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "main": "vl-button.js",
   "author": "DIDM",
