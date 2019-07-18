@@ -45,6 +45,7 @@
       //clickable pill
       test('clickable bevat juiste type class', () => {
         const clickablePill = fixture('vl-button-pill-fixture');
+        assert.isTrue(clickablePill.classList.contains('vl-pill'));
         assert.isTrue(clickablePill.classList.contains('vl-pill--clickable'));
 
         // valid values
