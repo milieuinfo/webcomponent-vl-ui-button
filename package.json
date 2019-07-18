@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "main": "vl-button.js",
   "author": "DIDM",
@@ -27,8 +27,8 @@
     "demo": "http-server"
   },
   "dependencies": {
-    "vl-ui-core": "1.4.2",
-    "vl-ui-link": "1.1.1",
+    "vl-ui-core": "1.4.3",
+    "vl-ui-link": "1.1.2",
     "vl-ui-pill": "0.0.3"
   },
   "peerDependencies": {
@@ -38,18 +38,19 @@
   },
   "devDependencies": {
     "@govflanders/vl-ui-button": "3.7.2",
-    "@govflanders/vl-ui-link": "3.7.2",
     "@govflanders/vl-ui-core": "3.7.2",
     "@govflanders/vl-ui-icon": "3.7.2",
+    "@govflanders/vl-ui-link": "3.7.2",
     "@govflanders/vl-ui-util": "3.7.2",
     "@govflanders/vl-ui-pill": "3.7.2",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
     "replace": "1.1.0",
     "np": "3.0.4",
+    "replace": "1.1.0",
     "uglify-js-es6": "2.8.9",
     "http-server": "0.11.1",
-    "vl-ui-util": "1.1.0",
-    "vl-ui-icon": "2.0.4"
+    "vl-ui-util": "1.1.3",
+    "vl-ui-icon": "2.0.5"
   }
 }
