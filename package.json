@@ -46,7 +46,7 @@
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
     "replace": "1.1.0",
-    "np": "3.0.4",
+    "np": "3.1.0",
     "uglify-js-es6": "2.8.9",
     "http-server": "0.11.1",
     "vl-ui-util": "^1.2.3",
