@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "vl-ui-core": "1.4.4",
-    "vl-ui-link": "1.1.4",
+    "vl-ui-link": "1.1.6",
     "vl-ui-pill": "1.0.0"
   },
   "peerDependencies": {
