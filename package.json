@@ -37,6 +37,7 @@
     "vl-ui-pill": "^1.0.0"
   },
   "devDependencies": {
+    "np": "3.1.0",
     "@govflanders/vl-ui-button": "3.9.0",
     "@govflanders/vl-ui-core": "3.9.0",
     "@govflanders/vl-ui-icon": "3.9.0",
@@ -44,7 +45,6 @@
     "@govflanders/vl-ui-pill": "3.9.0",
     "@govflanders/vl-ui-util": "3.9.0",
     "http-server": "0.11.1",
-    "np": "3.0.4",
     "replace": "1.1.1",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "2.0.11",
