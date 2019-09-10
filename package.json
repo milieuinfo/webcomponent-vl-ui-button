@@ -42,7 +42,7 @@
     "@govflanders/vl-ui-icon": "3.7.2",
     "@govflanders/vl-ui-link": "3.7.2",
     "@govflanders/vl-ui-pill": "3.7.2",
-    "@govflanders/vl-ui-util": "3.7.2",
+    "@govflanders/vl-ui-util": "3.9.0",
     "http-server": "0.11.1",
     "np": "3.0.4",
     "replace": "1.1.1",
