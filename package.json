@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "1.1.3",
+  "version": "1.1.9",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "main": "vl-button.js",
   "author": "DIDM",
@@ -14,7 +14,7 @@
     "registry": "http://artifactory-pr-build.lb.cumuli.be:8081/artifactory/api/npm/acd-npm/"
   },
   "scripts": {
-    "prepare": "npm run prepare:util",
+    "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
     "test": "wct -l chrome,firefox --npm",
     "release": "np",
@@ -27,9 +27,9 @@
     "demo": "http-server"
   },
   "dependencies": {
-    "vl-ui-core": "1.4.3",
-    "vl-ui-link": "1.1.2",
-    "vl-ui-pill": "1.0.0"
+    "vl-ui-core": "1.4.6",
+    "vl-ui-link": "1.1.9",
+    "vl-ui-pill": "1.0.6"
   },
   "peerDependencies": {
     "vl-ui-core": "^1.4.2",
@@ -37,19 +37,19 @@
     "vl-ui-pill": "^1.0.0"
   },
   "devDependencies": {
-    "@govflanders/vl-ui-button": "3.7.2",
-    "@govflanders/vl-ui-core": "3.7.2",
-    "@govflanders/vl-ui-icon": "3.7.2",
-    "@govflanders/vl-ui-link": "3.7.2",
-    "@govflanders/vl-ui-util": "3.7.2",
-    "@govflanders/vl-ui-pill": "3.7.2",
-    "wct-browser-legacy": "1.0.2",
-    "web-component-tester": "6.9.2",
-    "replace": "1.1.0",
     "np": "3.1.0",
-    "uglify-js-es6": "2.8.9",
+    "@govflanders/vl-ui-button": "3.9.0",
+    "@govflanders/vl-ui-core": "3.9.0",
+    "@govflanders/vl-ui-icon": "3.9.0",
+    "@govflanders/vl-ui-link": "3.9.0",
+    "@govflanders/vl-ui-pill": "3.9.0",
+    "@govflanders/vl-ui-util": "3.9.0",
     "http-server": "0.11.1",
-    "vl-ui-util": "^1.2.3",
-    "vl-ui-icon": "2.0.5"
+    "replace": "1.1.1",
+    "uglify-js-es6": "2.8.9",
+    "vl-ui-icon": "2.0.11",
+    "vl-ui-util": "^1.2.23",
+    "wct-browser-legacy": "1.0.2",
+    "web-component-tester": "6.9.2"
   }
 }
