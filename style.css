@@ -5547,6 +5547,36 @@ img.vl-image--error {
   left: 50%;
 }
 
+.vl-input-addon {
+  height: 3.5rem;
+  line-height: 3.5rem;
+  min-width: 3.5rem;
+  border: 1px solid #cbd2da;
+  text-decoration: none;
+  text-align: center;
+  padding: 0 1rem;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #333332;
+  z-index: 1;
+  margin: 0;
+}
+.vl-input-addon[type=button] .vl-vi, .vl-input-addon[href] .vl-vi {
+  color: #05c;
+}
+.vl-input-addon[type=button]:hover .vl-vi, .vl-input-addon[type=button]:focus .vl-vi, .vl-input-addon[href]:hover .vl-vi, .vl-input-addon[href]:focus .vl-vi {
+  color: #003bb0;
+}
+.vl-input-addon .vl-vi {
+  color: inherit;
+  vertical-align: middle;
+  line-height: 1;
+}
+.vl-input-addon .vl-vi::before, .vl-input-addon .vl-vi::after {
+  font-size: 16px;
+}
+
 .vl-u-visually-hidden {
   position: absolute !important;
   height: 1px;

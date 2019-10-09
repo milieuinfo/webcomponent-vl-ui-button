@@ -1,6 +1,7 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
 import { VlLinkElement } from "/node_modules/vl-ui-link/vl-link.js";
 import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
+import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.src.js";
 
 /**
  * VlButton
@@ -59,7 +60,11 @@ export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElemen
     }
 }
 
+export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
+    
+} 
 
 define('vl-button', VlButton, {extends: 'button'});
 define('vl-button-link', VlButtonLink, {extends: 'button'});
 define('vl-button-pill', VlButtonPill, {extends: 'button'});
+define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});
