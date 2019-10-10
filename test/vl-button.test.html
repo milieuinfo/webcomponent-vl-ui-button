@@ -7,6 +7,7 @@
   <script src="../../web-component-tester/browser.js"></script>
 
   <script type="module" src="../vl-button.src.js"></script>
+  <script type="module" src="/node_modules/vl-ui-icon/vl-icon.js"></script>
 </head>
 
 <body>
@@ -28,6 +29,30 @@
     </template>
   </test-fixture>
 
+  <test-fixture id="vl-button-with-icon-fixture">
+    <template>
+      <button is="vl-button">
+        <span is="vl-icon" icon="calendar"></span>
+      </button>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-button-with-icon-before-fixture">
+    <template>
+      <button is="vl-button">
+        <span is="vl-icon" icon="calendar" before></span>Kalender
+      </button>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="vl-button-with-icon-after-fixture">
+    <template>
+      <button is="vl-button">
+        <span is="vl-icon" icon="calendar" after></span>Kalender
+      </button>
+    </template>
+  </test-fixture>
+
   <script>
     suite('<vl-button>', () => {
       const should = chai.should();
@@ -37,7 +62,7 @@
         assert.isTrue(button.classList.contains('vl-button'));
       });
 
-      test('krijgt de juiste class wanneer de knop een attribuut bevat', () => {
+      test('krijgt de juiste class wanneer de knop een attribuut bevat', (done) => {
         const button = fixture('vl-button-fixture');
         ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary'].forEach((attribuut) => {
           assert.isFalse(button.classList.contains('vl-button--' + attribuut));
@@ -46,6 +71,7 @@
           button.removeAttribute(attribuut);
           assert.isFalse(button.classList.contains('vl-button--' + attribuut));
         });
+        done();
       });
 
       // clickable pill
@@ -72,6 +98,31 @@
       test('input addon variant bevat juiste type class', () => {
         const inputAddonButton = fixture('vl-button-input-addon-fixture');
         assert.isTrue(inputAddonButton.classList.contains('vl-input-addon'));
+      });
+
+      test('met icon child element bevat de juiste class', (done) => {
+        const button = fixture('vl-button-with-icon-fixture');
+        setTimeout(() => {
+          assert.isTrue(button.classList.contains('vl-button--icon'));
+          done();
+        });
+      });
+
+      test('met icon before of after child element bevat de juiste class', (done) => {
+        const attributes = ['before', 'after'];
+        attributes.forEach((attribute) => {
+          const button = fixture('vl-button-with-icon-' + attribute + '-fixture');
+          setTimeout(() => {
+            assert.isTrue(button.classList.contains('vl-button--icon-' + attribute));
+            const icon = button.querySelector('[is="vl-icon"]');
+            assert.isTrue(icon.classList.contains('vl-button__icon'));
+            assert.isTrue(icon.classList.contains('vl-button__icon--' + attribute));
+            assert.isFalse(icon.classList.contains('vl-icon--' + attribute));
+            if (attributes.indexOf(attribute) === attributes.length - 1) {
+              done();
+            }
+          });
+        });
       });
     });
   </script>

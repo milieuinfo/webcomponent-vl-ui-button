@@ -35,6 +35,9 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 
     connectedCallback() {
         this.classList.add('vl-button');
+        setTimeout(() => {
+            this._setIconClass();
+        });
     }
 
     get _classPrefix() {
@@ -43,6 +46,22 @@ export class VlButton extends NativeVlElement(HTMLButtonElement) {
 
     get _stylePath() {
         return '../style.css';
+    }
+
+    _setIconClass() {
+        const icon = this.querySelector('[is="vl-icon"]');
+        if (icon) {
+            let suffix = '';
+            suffix += icon.hasAttribute('before') ? '-before' : '';
+            suffix += icon.hasAttribute('after') ? '-after' : '';
+            this.classList.add(this._classPrefix + 'icon' + suffix);
+            icon.classList.add('vl-button__icon');
+            if (suffix) {
+                icon.classList.add('vl-button__icon-' + suffix);
+            }
+            icon.classList.remove('vl-icon--before');
+            icon.classList.remove('vl-icon--after');
+        }
     }
 }
 
