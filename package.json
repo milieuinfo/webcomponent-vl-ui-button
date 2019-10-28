@@ -45,13 +45,17 @@
     "@govflanders/vl-ui-link": "3.9.1",
     "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
+    "browser-logos": "alrra/browser-logos#60.1.5",
     "http-server": "0.11.1",
     "np": "3.1.0",
     "replace": "1.1.1",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "^2.1.0",
-    "vl-ui-util": "^2.0.9",
+    "vl-ui-util": "^2.0.10",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2"
-  }
+  },
+  "bundledDependencies": [
+    "browser-logos"
+  ]
 }

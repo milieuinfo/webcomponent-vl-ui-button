@@ -1,15 +1,47 @@
 # vl-button
 De vl-button webcomponent laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.
 
-## Installation
+## Installatie
 ```
 npm install --save vl-ui-button
 ```
 
+## API
+De [API](https://webcomponenten.omgeving.vlaanderen.be/doc/VlButton.html) bevat een overzicht van de ondersteunde attributen en een beschrijving van de beschikbare functies.
+
 ## Demo
+De [demo](https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html) pagina bevat een overzicht van de mogelijjkheden met code voorbeelden. Lokaal opstarten kan met onderstaand [NPM](https://www.npmjs.com) script.
 ```
 npm run demo
 ```
+
+## Testen
+De webcomponent bevat verschillende unit testen die bij elke commit geautomatiseerd in Chrome en Firefox draaien. Hierdoor kunnen we bij elke release een minimum aan kwaliteit garanderen. Later zullen er ook nog UI testen toegevoegd worden zodat al de functionaliteit uitgebreid getest wordt.
+
+De testen kunnen lokaal opgestart worden met onderstaand [NPM](https://www.npmjs.com) script.
+```
+npm run test
+```
+
+## Issues
+Indien je nood hebt aan extra feature of een bug gevonden hebt, mag je hiervoor een issue aanmaken. Er zijn 3 issues templates beschikbaar:
+1. Feature request
+2. Bug
+3. Task
+
+Uiteraard is het ook toegelaten om mee te ontwikkelen door gebruik te maken van Pull Requests (PR). Gelieve volgende conventies te respecteren:
+1. Elk bug issue kan best gelinkt worden aan een branch met een test die het probleem illustreert zodat de bug opgelost kan worden
+2. Elke commit die betrekking heeft tot een issue (feature, bug en task) moet een verwijzing hiernaar hebben vb. #33 fix uitlijning header
+3. Elke pull request (PR) moet een issue verwijzing hebben, zodat de closed issues automatisch opgenomen kunnen worden via de release notes
+
+## Versionering
+We gebruiken [Semantic Versioning](https://semver.org) en voorzien elke release van release notes, zie een overzicht van de [releases](https://github.com/milieuinfo/webcomponent-vl-ui-button/releases).
+
+## Browser ondersteuning
+De webcomponenten zijn ontwikkeld door uitsluitend gebruik te maken van web standaarden (JavaScript, HTML, CSS). Hierdoor worden al de evergreen browser automatisch ondersteund.
+![Chrome](/node_modules/browser-logos/src/chrome/chrome_48x48.png) | ![Firefox](/node_modules/browser-logos/src/firefox/firefox_48x48.png) | ![Safari](/node_modules/browser-logos/src/safari/safari_48x48.png) | ![Opera](/node_modules/browser-logos/src/opera/opera_48x48.png) | ![Edge](/node_modules/browser-logos/src/edge/edge_48x48.png)
+--- | --- | --- | --- | --- |
+<center>Chrome</center> | <center>Firefox</center> | <center>Safari</center> | <center>Opera</center> | <center>Edge</center> |
 
 ## Credits
 Zie de lijst van [ontwikkelaars](https://github.com/milieuinfo/webcomponent-vl-ui-button/graphs/contributors) die meegewerkt hebben aan de webcomponent.
