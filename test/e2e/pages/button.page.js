@@ -1,4 +1,5 @@
 const Button = require('../components/button');
+const { By } = require('selenium-webdriver');
 
 class ButtonPage {
     constructor(driver) {
@@ -6,7 +7,8 @@ class ButtonPage {
     }
 
     async primaryButton() {
-        return new Button(this.driver, '#button-primary');
+        return this.driver.findElement(By.id('button-primary'));
+        // return new Button(this.driver, '#button-primary');
     }
 }
 
