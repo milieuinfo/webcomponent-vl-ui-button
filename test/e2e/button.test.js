@@ -1,25 +1,19 @@
 
 const ButtonPage = require('../e2e/pages/button.page')
-const {Builder, Key, By, until} = require('selenium-webdriver');
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+const {Builder} = require('selenium-webdriver');
 
 describe('Button', function () {
-    let driver;
+    const driver = new Builder().forBrowser('chrome').build();
 
-    before(async function() {
-        driver = await new Builder().forBrowser('chrome').build();
-    });
-
-    it('Als ik op de knop klik, word mijn actie geregistreerd.', async function() {
-        await driver.get('https://localhost:8080/demo/vl-button.html');
-        let buttonPage = await new ButtonPage(driver);
+    it('Als ik op de knop klik, word mijn actie geregistreerd.', async () => {
+        await driver.get('http://localhost:8080/demo/vl-button.html');
+        let buttonPage = new ButtonPage(driver);
         let primaryButton = await buttonPage.primaryButton();
         primaryButton.click();
-
-        sleep(10000);
+        setTimeout(() => {}, 3000);
+        return new Promise(resolve => {
+            resolve();
+        });
     });
 
     after(() => driver && driver.quit());
