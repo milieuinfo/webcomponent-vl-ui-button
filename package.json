@@ -24,9 +24,12 @@
     "release:prepare:css": "replace '\\.\\./style.css' '/node_modules/vl-ui-button/style.css' vl-button.js",
     "release:prepare:commit": "git add -f vl-button.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
-    "demo": "http-server"
+    "demo": "http-server",
+    "e2e": "mocha test/**/*.test.js"
   },
   "dependencies": {
+    "chai-webdriver-promised": "^4.0.3",
+    "mocha": "6.2.2",
     "vl-ui-core": "^2.1.0",
     "vl-ui-input-addon": "^1.0.0",
     "vl-ui-link": "^1.1.10",
@@ -45,14 +48,17 @@
     "@govflanders/vl-ui-link": "3.9.1",
     "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
+    "chai": "^4.2.0",
     "http-server": "0.11.1",
     "np": "3.1.0",
     "replace": "1.1.1",
+    "selenium-webdriver": "^4.0.0-alpha.5",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "^2.1.0",
     "vl-ui-util": "^2.0.10",
     "wct-browser-legacy": "1.0.2",
-    "web-component-tester": "6.9.2"
+    "web-component-tester": "6.9.2",
+    "webdriver-manager": "^12.1.7"
   },
   "bundledDependencies": [
     "browser-logos"
