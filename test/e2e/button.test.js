@@ -11,9 +11,7 @@ describe('Button', function () {
         let primaryButton = await buttonPage.primaryButton();
         primaryButton.click();
         return new Promise(resolve => {
-            setTimeout(() => {
-                resolve();
-            }, 3000);
+            resolve();
         });
     });
 
