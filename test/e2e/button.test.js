@@ -10,9 +10,10 @@ describe('Button', function () {
         let buttonPage = new ButtonPage(driver);
         let primaryButton = await buttonPage.primaryButton();
         primaryButton.click();
-        setTimeout(() => {}, 3000);
         return new Promise(resolve => {
-            resolve();
+            setTimeout(() => {
+                resolve();
+            }, 3000);
         });
     });
 
