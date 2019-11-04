@@ -16,9 +16,7 @@ class VlElement extends WebElement {
     }
 
     async isDisabled() {
-        return (async () => {
-            return !(await this.isEnabled());
-        })();
+        return !(await this.isEnabled());
     }
 
     async hasClass(clazz) {
@@ -26,15 +24,11 @@ class VlElement extends WebElement {
     }
 
     async hasAttribute(name) {
-        return (async () => {
-            return (await super.getAttribute(name)) != null;
-        })();
+        return (await super.getAttribute(name)) != null;
     }
 
     async hasText() {
-        return (async () => {
-            return (await this.getText()) != '';
-        })();
+        return (await this.getText()) != '';
     }
 }
 
