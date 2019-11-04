@@ -25,7 +25,9 @@
     "release:prepare:commit": "git add -f vl-button.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
     "demo": "http-server",
-    "e2e": "mocha test/**/*.test.js"
+    "e2e": "mocha test/**/*.test.js",
+    "server": "http-server &",
+    "posttest": "pkill -f http-server"
   },
   "dependencies": {
     "chai-webdriver-promised": "^4.0.3",
@@ -50,6 +52,8 @@
     "@govflanders/vl-ui-util": "3.9.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "forever": "^1.0.0",
     "http-server": "0.11.1",
     "np": "3.1.0",
     "replace": "1.1.1",

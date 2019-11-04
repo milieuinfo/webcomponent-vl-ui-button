@@ -1,9 +1,9 @@
 
-const { assert, chromeDriver } = require('./test');
+const { assert, driver } = require('./test');
 const VlButtonPage = require('./pages/vl-button.page');
 
 describe('vl-button', async () => {
-    const vlButtonPage = new VlButtonPage(chromeDriver);
+    const vlButtonPage = new VlButtonPage(driver);
 
     before(() => {
         return vlButtonPage.load();
@@ -182,5 +182,5 @@ describe('vl-button', async () => {
         await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
     });
 
-    after(() => chromeDriver && chromeDriver.quit());
+    after(() => driver && driver.quit());
 });
