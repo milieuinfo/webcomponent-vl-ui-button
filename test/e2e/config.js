@@ -1,30 +1,40 @@
 let argv = require('yargs').argv;
 
-function getBrowserName(argv) {
-    if (argv.chrome) {
-        return "chrome"
-    } else if (argv.firefox) {
-        return "firefox"
-    } else if (argv.opera) {
-        return "opera"
-    } else if (argv.safari) {
-        return "safari"
+function browserName() {
+    if(argv) {
+        if (argv.chrome) {
+            return "chrome"
+        } else if (argv.firefox) {
+            return "firefox"
+        } else if (argv.opera) {
+            return "opera"
+        } else if (argv.safari) {
+            return "safari"
+        } else {
+            console.error("Ongeldige browser!");
+            process.exit(3);
+        }
     } else {
-        console.error("Ongeldige browser!");
+        console.error("Geen argumenten meegegeven!");
         process.exit(1);
     }
 }
 
-function getGridDetails(argv) {
-    if (argv.grid) {
-        return true
+function gridEnabled() {
+    if(argv) {
+        if (argv.grid) {
+            return true
+        } else {
+            return false;
+        }
     } else {
-        return false;
+        console.error("Geen argumenten meegegeven!");
+        process.exit(2);
     }
 }
 
 module.exports = {
-    "browserName": getBrowserName(argv),
-    "gridEnabled": getGridDetails(argv),
+    "browserName": browserName(),
+    "gridEnabled": gridEnabled(),
     "gridUrl": "http://selenium-hub:4444/wd/hub"
 }
