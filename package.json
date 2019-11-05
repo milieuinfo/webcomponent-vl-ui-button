@@ -20,8 +20,8 @@
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
-    "test:grid": "wct --config-file ./wct.docker.conf.json && npm run test:e2e:grid",
     "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
+    "test:grid": "wct --config-file ./wct.conf.json --npm && npm run test:e2e:grid",
     "posttest:e2e": "pkill -f http-server",
     "test:e2e:chrome": "mocha test/**/*.test.js --chrome",
     "test:e2e:chrome:grid": "mocha test/**/*.test.js --chrome --grid",
@@ -70,7 +70,6 @@
     "selenium-webdriver": "4.0.0-alpha.5",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "^2.1.0",
-    "vl-ui-util": "^2.0.13",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
     "yargs": "14.2.0"
