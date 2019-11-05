@@ -16,9 +16,12 @@
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
+    "pretest": "npm install chromedriver --chromedriver-force-download",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
+    "test:grid": "wct --config-file ./wct.docker.conf.json && npm run test:e2e:grid",
+    "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
     "posttest:e2e": "pkill -f http-server",
     "test:e2e:chrome": "mocha test/**/*.test.js --chrome",
     "test:e2e:chrome:grid": "mocha test/**/*.test.js --chrome --grid",
@@ -59,19 +62,18 @@
     "@govflanders/vl-ui-util": "3.9.1",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "dotenv": "^8.2.0",
-    "forever": "^1.0.0",
+    "chromedriver": "^78.0.1",
+    "geckodriver": "1.19.1",
     "http-server": "0.11.1",
     "np": "3.1.0",
     "replace": "1.1.1",
-    "selenium-webdriver": "^4.0.0-alpha.5",
+    "selenium-webdriver": "4.0.0-alpha.5",
     "uglify-js-es6": "2.8.9",
     "vl-ui-icon": "^2.1.0",
     "vl-ui-util": "^2.0.13",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
-    "webdriver-manager": "^12.1.7",
-    "yargs": "^14.2.0"
+    "yargs": "14.2.0"
   },
   "bundledDependencies": [
     "browser-logos"
