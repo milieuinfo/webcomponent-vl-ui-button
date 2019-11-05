@@ -1,5 +1,6 @@
 const VlButton = require('../components/vl-button');
 const Page = require('./page');
+const config = require('../config');
 
 class VlButtonPage extends Page {
     async _getButton(selector) {
@@ -87,7 +88,7 @@ class VlButtonPage extends Page {
     }
 
     async load() {
-        await super.load('http://tests:8080/demo/vl-button.html');
+        await super.load(config.baseUrl);
     }
 }
 

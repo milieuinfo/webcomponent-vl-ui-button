@@ -25,7 +25,8 @@
     "release:prepare:commit": "git add -f vl-button.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
     "demo": "http-server",
-    "e2e": "mocha test/**/*.test.js",
+    "e2e:chrome": "mocha test/**/*.test.js --chrome",
+    "e2e:firefox": "mocha test/**/*.test.js --firefox",
     "server": "http-server &",
     "posttest": "pkill -f http-server"
   },
@@ -63,7 +64,8 @@
     "vl-ui-util": "^2.0.13",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2",
-    "webdriver-manager": "^12.1.7"
+    "webdriver-manager": "^12.1.7",
+    "yargs": "^14.2.0"
   },
   "bundledDependencies": [
     "browser-logos"
