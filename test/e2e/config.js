@@ -21,16 +21,7 @@ function browserName() {
 }
 
 function gridEnabled() {
-    if(argv) {
-        if (argv.grid) {
-            return true
-        } else {
-            return false;
-        }
-    } else {
-        console.error("Geen argumenten meegegeven!");
-        process.exit(2);
-    }
+    return !!argv.grid
 }
 
 module.exports = {

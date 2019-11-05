@@ -6,6 +6,8 @@ const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 var assert = chai.assert;
 
+process.env['webdriver.opera.driver'] = "./operadriver";
+
 let driver;
 
 if (config.gridEnabled) {

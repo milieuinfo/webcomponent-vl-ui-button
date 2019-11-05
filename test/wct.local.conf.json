@@ -1,0 +1,7 @@
+{
+  "plugins": {
+    "local": ["chrome", "firefox", "safari"],
+    "sauce": false
+  },
+  "suites": "test/**/*.test.html"
+}
