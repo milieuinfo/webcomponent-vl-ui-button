@@ -25,5 +25,6 @@ function getGridDetails(argv) {
 
 module.exports = {
     "browserName": getBrowserName(argv),
-    "gridEnabled": getGridDetails(argv)
+    "gridEnabled": getGridDetails(argv),
+    "gridUrl": "http://selenium-hub:4444/wd/hub"
 }
