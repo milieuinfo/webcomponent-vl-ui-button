@@ -6,6 +6,6 @@
           "browsers": ["chrome", "firefox"]
       }
   },
-  "suites": ["*.test.html"],
+  "suites": ["test/unit/*.test.html"],
   "verbose": true
 }
