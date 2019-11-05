@@ -26,7 +26,9 @@
     "release:testless": "np --yolo",
     "demo": "http-server",
     "e2e:chrome": "mocha test/**/*.test.js --chrome",
+    "e2e:chrome:grid": "mocha test/**/*.test.js --chrome --grid",
     "e2e:firefox": "mocha test/**/*.test.js --firefox",
+    "e2e:firefox:grid": "mocha test/**/*.test.js --firefox --grid",
     "server": "http-server &",
     "posttest": "pkill -f http-server"
   },
