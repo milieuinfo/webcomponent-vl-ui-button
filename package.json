@@ -53,8 +53,5 @@
     "vl-ui-util": "^2.0.13",
     "wct-browser-legacy": "1.0.2",
     "web-component-tester": "6.9.2"
-  },
-  "bundledDependencies": [
-    "browser-logos"
-  ]
+  }
 }
