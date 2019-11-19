@@ -1,5 +1,5 @@
 
-const { assert, driver } = require('./test');
+const { assert, driver } = require('vl-ui-core/test/e2e');
 const VlButtonPage = require('./pages/vl-button.page');
 
 describe('vl-button', async () => {
