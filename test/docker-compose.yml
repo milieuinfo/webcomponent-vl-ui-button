@@ -30,6 +30,10 @@ services:
       - selenium-firefox
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"
+    environment: 
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - no_proxy=${no_proxy},selenium-hub,host
     volumes:
       - ${HOME:-.}/.npmrc:/root/.npmrc:ro
       - ${HOME:-.}/.gitconfig:/root/.gitconfig:ro
