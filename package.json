@@ -21,7 +21,7 @@
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
     "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
-    "test:grid": "wct --config-file ./wct.docker.conf.json --npm && npm run test:e2e:grid",
+    "test:grid": "wct --config-file ./wct.docker.conf.json --persistent && npm run test:e2e:grid",
     "posttest:e2e": "pkill -f http-server",
     "test:e2e:chrome": "mocha test/**/*.test.js --chrome",
     "test:e2e:chrome:grid": "mocha test/**/*.test.js --chrome --grid",
