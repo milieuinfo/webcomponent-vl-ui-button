@@ -25,7 +25,7 @@ services:
     image: ${DOCKER_REGISTRY}node:12
     container_name: tests
     hostname: tests
-    command: bash -c " echo \"http\" ${HTTP_PROXY} && echo \"no-proxy\" ${NO_PROXY} && cp -R /data/. /workdir && npm install && npm run test:grid"
+    command: bash -c "cp -R /data/. /workdir && npm install && npm run test:grid"
     depends_on:
       - selenium-hub
       - selenium-chrome
