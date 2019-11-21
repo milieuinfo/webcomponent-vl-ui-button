@@ -11,6 +11,7 @@
   ],
   "expanded": true,
   "npm": true,
+  "verbose": true,
   "plugins": {
     "local": false,
     "sauce": false
