@@ -1,6 +1,6 @@
 module.exports = {
     "full-trace": true,
-    "reporter": 'progress',
+    "reporter": 'spec',
     "spec": ["test/**/*.test.js"],
     "timeout": '5000'
 }

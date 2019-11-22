@@ -123,12 +123,12 @@ describe('vl-button', async () => {
         const primaryButton = await vlButtonPage.getPrimaryButton();
         const linkButton = await vlButtonPage.getLinkButton();
         const linkButtonIcon = await linkButton.getIcon();
-        await assert.eventually.equal(primaryButton.isLink(), false);
-        await assert.eventually.equal(primaryButton.hasIcon(), false);
-        await assert.eventually.equal(linkButton.isLink(), true);
-        await assert.eventually.equal(linkButton.hasIcon(), true);
-        await assert.eventually.equal(linkButton.getText(), 'Demo link');
-        await assert.eventually.equal(linkButtonIcon.isBefore(), true);
+        await assert.eventually.equal(primaryButton.isLink(), false, '1');
+        await assert.eventually.equal(primaryButton.hasIcon(), false), '2';
+        await assert.eventually.equal(linkButton.isLink(), true), '3';
+        await assert.eventually.equal(linkButton.hasIcon(), true, '4');
+        await assert.eventually.equal(linkButton.getText(), 'Demo link', '5');
+        await assert.eventually.equal(linkButtonIcon.isBefore(), true, '6');
         await assert.eventually.equal(linkButtonIcon.getIcon(), 'arrow-right-fat');
     });
 
