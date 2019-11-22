@@ -96,7 +96,7 @@ describe('vl-button', async () => {
         await assert.eventually.equal(loadingButton.isLoading(), true);
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een seconodary en een gewone knop', async () => {
+    it('als gebruiker wil ik het verschil kunnen zien tussen een secondary en een gewone knop', async () => {
         const primaryButton = await vlButtonPage.getPrimaryButton();
         const secondaryButton = await vlButtonPage.getSecondaryButton();
         await assert.eventually.equal(primaryButton.isSecondary(), false);
