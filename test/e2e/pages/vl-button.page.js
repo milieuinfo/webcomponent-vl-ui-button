@@ -1,6 +1,6 @@
 const VlButton = require('../components/vl-button');
-const Page = require('./page');
-const config = require('../config');
+const { Page } = require('vl-ui-core');
+const { Config } = require('vl-ui-core');
 
 class VlButtonPage extends Page {
     async _getButton(selector) {
@@ -88,7 +88,7 @@ class VlButtonPage extends Page {
     }
 
     async load() {
-        await super.load(config.baseUrl);
+        await super.load(Config.baseUrl);
     }
 }
 
