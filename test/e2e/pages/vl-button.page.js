@@ -88,7 +88,7 @@ class VlButtonPage extends Page {
     }
 
     async load() {
-        await super.load(Config.baseUrl);
+        await super.load('http://localhost:8080/demo/vl-button.html');
     }
 }
 
