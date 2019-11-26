@@ -3,3 +3,4 @@ node_modules
 ./vl-button.js
 .idea/
 *.css.map
+.vscode/**
