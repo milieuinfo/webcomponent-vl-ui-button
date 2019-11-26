@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "main": "vl-button.js",
   "author": "DIDM",
@@ -43,7 +43,8 @@
     "chai-webdriver-promised": "^4.0.3",
     "mocha": "6.2.2",
     "vl-ui-core": "milieuinfo/webcomponent-vl-ui-core#UIG-271",
-    "vl-ui-input-addon": "^1.0.0",
+    "vl-ui-core": "^2.1.0",
+    "vl-ui-input-addon": "^1.0.1",
     "vl-ui-link": "^1.1.10",
     "vl-ui-pill": "^1.0.8"
   },
