@@ -47,6 +47,7 @@
   },
   "peerDependencies": {
     "vl-ui-core": "^2.0.0",
+    "vl-ui-input-addon": "^1.0.1",
     "vl-ui-link": "^1.1.10",
     "vl-ui-pill": "^1.0.8"
   },
