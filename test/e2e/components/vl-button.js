@@ -1,5 +1,5 @@
 const { VlElement } = require('vl-ui-core');
-const VlIcon = require('./vl-icon');
+const { VlIcon } = require('vl-ui-icon');
 
 class VlButton extends VlElement {  
     constructor(driver, selector) {
