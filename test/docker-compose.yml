@@ -39,3 +39,4 @@ services:
       - ${HOME:-.}/.git-credentials:/root/.git-credentials:ro
       - ..:/data:ro
       - ./wct.docker.conf.json:/workdir/wct.conf.json:ro
+      - ./reports:/workdir/mochawesome-report/
