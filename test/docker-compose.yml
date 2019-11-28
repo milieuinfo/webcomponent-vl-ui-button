@@ -10,6 +10,9 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - no_proxy=${no_proxy},selenium-hub,tests
     ports:
       - 5900:5900
   selenium-firefox:
@@ -19,6 +22,9 @@ services:
     environment:
       - HUB_PORT_4444_TCP_ADDR=selenium-hub
       - HUB_PORT_4444_TCP_PORT=4444
+      - http_proxy=${http_proxy}
+      - https_proxy=${https_proxy}
+      - no_proxy=${no_proxy},selenium-hub,tests
     ports:
       - 5901:5900
   tests:
