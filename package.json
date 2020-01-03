@@ -16,10 +16,20 @@
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util && npm explore vl-ui-core -- npm install",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
-    "test": "npm explore vl-ui-util -- npm run test",
-    "test:unit": "npm explore vl-ui-util -- npm run test:unit",
-    "test:e2e": "npm explore vl-ui-util -- npm run test:e2e",
-    "test:grid": "npm explore vl-ui-util -- npm run test:grid",
+    "pretest": "npm install chromedriver --chromedriver-force-download",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "wct --config-file ./wct.local.conf.json --verbose",
+    "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
+    "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
+    "test:grid": "wct --config-file ./wct.docker.conf.json && npm run test:e2e:grid",
+    "posttest:e2e": "pkill -f http-server",
+    "test:e2e:chrome": "mocha --chrome",
+    "test:e2e:chrome:grid": "mocha --chrome --grid",
+    "test:e2e:firefox": "mocha --firefox",
+    "test:e2e:firefox:grid": "mocha --firefox --grid",
+    "test:e2e:opera": "mocha --opera",
+    "test:e2e:safari": "mocha --safari",
+    "test:server:start": "http-server &",
     "release": "np",
     "release:prepare": "npm run release:prepare:build && npm run release:prepare:imports && npm run release:prepare:css && npm run release:prepare:commit",
     "release:prepare:build": "uglifyjs --compress --mangle --output vl-button.js -- *.src.js",
@@ -27,7 +37,7 @@
     "release:prepare:css": "replace '\\.\\./style.css' '/node_modules/vl-ui-button/style.css' vl-button.js",
     "release:prepare:commit": "git add -f vl-button.js && git commit --amend --no-edit && git pull",
     "release:testless": "np --yolo",
-    "demo": "npm explore vl-ui-util -- npm run demo"
+    "demo": "http-server"
   },
   "dependencies": {
     "chromedriver": "^79.0.0",
