@@ -62,8 +62,5 @@
     "@govflanders/vl-ui-util": "3.9.1",
     "vl-ui-icon": "2.1.1",
     "vl-ui-util": "^3.1.0"
-  },
-  "bundledDependencies": [
-    "browser-logos"
-  ]
+  }
 }
