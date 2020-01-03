@@ -19,6 +19,7 @@
     "test": "npm explore vl-ui-core -- npm run test",
     "test:unit": "npm explore vl-ui-core -- npm run test:unit",
     "test:e2e": "npm explore vl-ui-core -- npm run test:e2e",
+    "test:grid": "npm explore vl-ui-core -- npm run test:grid",
     "release": "np",
     "release:prepare": "npm run release:prepare:build && npm run release:prepare:imports && npm run release:prepare:css && npm run release:prepare:commit",
     "release:prepare:build": "uglifyjs --compress --mangle --output vl-button.js -- *.src.js",
