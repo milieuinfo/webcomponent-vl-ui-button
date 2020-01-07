@@ -60,8 +60,8 @@
     "@govflanders/vl-ui-link": "3.9.1",
     "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
+    "uglify-es": "3.3.9",
     "vl-ui-icon": "2.1.1",
-    "vl-ui-util": "^3.2.3",
-    "uglify-es": "3.3.9"
+    "vl-ui-util": "^3.2.5"
   }
 }
