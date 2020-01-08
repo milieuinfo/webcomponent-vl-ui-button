@@ -3,6 +3,49 @@ import { VlLinkElement } from "/node_modules/vl-ui-link/vl-link.js";
 import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
 import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.js";
 
+export const VlButtonElement = (SuperClass) => {
+    return class extends NativeVlElement(SuperClass) {
+        static get _observedAttributes() {
+            return [];
+        }
+
+        static get _observedClassAttributes() {
+            return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary', 'loading'];
+        }
+
+        connectedCallback() {
+            this.classList.add('vl-button');
+            setTimeout(() => {
+                this._setIconClass();
+            });
+        }
+
+        get _classPrefix() {
+            return 'vl-button--';
+        }
+
+        get _stylePath() {
+            return '../style.css';
+        }
+
+        _setIconClass() {
+            const icon = this.querySelector('[is="vl-icon"]');
+            if (icon) {
+                let suffix = '';
+                suffix += icon.hasAttribute('before') ? '-before' : '';
+                suffix += icon.hasAttribute('after') ? '-after' : '';
+                this.classList.add(this._classPrefix + 'icon' + suffix);
+                icon.classList.add('vl-button__icon');
+                if (suffix) {
+                    icon.classList.add('vl-button__icon-' + suffix);
+                }
+                icon.classList.remove('vl-icon--before');
+                icon.classList.remove('vl-icon--after');
+            }
+        }
+    }
+};
+
 /**
  * VlButton
  * @class
@@ -24,46 +67,7 @@ import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-ad
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html|Demo}
  */
-export class VlButton extends NativeVlElement(HTMLButtonElement) {
-    static get _observedAttributes() {
-        return [];
-    }
-
-    static get _observedClassAttributes() {
-        return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary', 'loading'];
-    }
-
-    connectedCallback() {
-        this.classList.add('vl-button');
-        setTimeout(() => {
-            this._setIconClass();
-        });
-    }
-
-    get _classPrefix() {
-        return 'vl-button--';
-    }
-
-    get _stylePath() {
-        return '../style.css';
-    }
-
-    _setIconClass() {
-        const icon = this.querySelector('[is="vl-icon"]');
-        if (icon) {
-            let suffix = '';
-            suffix += icon.hasAttribute('before') ? '-before' : '';
-            suffix += icon.hasAttribute('after') ? '-after' : '';
-            this.classList.add(this._classPrefix + 'icon' + suffix);
-            icon.classList.add('vl-button__icon');
-            if (suffix) {
-                icon.classList.add('vl-button__icon-' + suffix);
-            }
-            icon.classList.remove('vl-icon--before');
-            icon.classList.remove('vl-icon--after');
-        }
-    }
-}
+export class VlButton extends VlButtonElement(HTMLButtonElement) {}
 
 export class VlButtonLink extends VlLinkElement(HTMLButtonElement) {}
 
