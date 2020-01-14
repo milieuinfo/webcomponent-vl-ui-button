@@ -7,6 +7,13 @@ class VlButtonPage extends Page {
         return new VlButton(this.driver, selector);
     }
 
+    async waitUntilTextIs(selector, text) {
+        const button = await this._getButton(selector);
+        return this.driver.wait(async () => {
+            return (await button.getText()) == text;
+        }, 5000);
+    }
+
     async getPrimaryButton() {
         return this._getButton('#button-primary');
     }
@@ -64,7 +71,7 @@ class VlButtonPage extends Page {
     }
 
     async getLinkButton() {
-        return this._getButton('#button-link');
+        return this._getButton('#button-a-link');
     }
 
     async getPillButton() {
