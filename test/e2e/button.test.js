@@ -13,7 +13,7 @@ describe('vl-button', async () => {
         const button = await vlButtonPage.getPrimaryButton();
         await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
         await button.click();
-        await assert.eventually.equal(button.getText(), 'Klik geregistreerd');
+        await vlButtonPage.waitUntilTextIs('#button-primary', 'Klik geregistreerd');
     });
 
     it('als gebruiker wil ik niet dat mijn klik geregistreerd wordt wanneer ik op een disabled knop klik', async () => {
