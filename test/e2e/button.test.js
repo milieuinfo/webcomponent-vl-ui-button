@@ -6,9 +6,7 @@ describe('vl-button', async () => {
     const vlButtonPage = new VlButtonPage(driver);
 
     before((done) => {
-        vlButtonPage.load().then(() => {
-            done();
-        });
+        vlButtonPage.load().then(() => done());
     });
 
     it('als gebruiker wil ik dat mijn klik geregistreerd wordt wanneer ik op een knop klik', async () => {
