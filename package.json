@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "chromedriver": "^79.0.0",
-    "vl-ui-core": "^3.1.0",
+    "vl-ui-core": "^3.1.1",
     "vl-ui-icon": "^2.1.1",
     "vl-ui-input-addon": "^1.0.1",
     "vl-ui-pill": "^1.0.8"
