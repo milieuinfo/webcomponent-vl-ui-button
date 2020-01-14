@@ -5,8 +5,10 @@ const VlButtonPage = require('./pages/vl-button.page');
 describe('vl-button', async () => {
     const vlButtonPage = new VlButtonPage(driver);
 
-    before(() => {
-        return vlButtonPage.load();
+    before((done) => {
+        vlButtonPage.load().then(() => {
+            done();
+        });
     });
 
     it('als gebruiker wil ik dat mijn klik geregistreerd wordt wanneer ik op een knop klik', async () => {
