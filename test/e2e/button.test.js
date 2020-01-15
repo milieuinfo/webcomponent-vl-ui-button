@@ -119,66 +119,66 @@ describe('vl-button', async () => {
         await assert.eventually.equal(iconButton.hasIcon(), true);
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een link en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
-        const linkButton = await vlButtonPage.getLinkButton();
-        const linkButtonIcon = await linkButton.getIcon();
-        await assert.eventually.equal(primaryButton.isLink(), false, '1');
-        await assert.eventually.equal(primaryButton.hasIcon(), false), '2';
-        await assert.eventually.equal(linkButton.isLink(), true), '3';
-        await assert.eventually.equal(linkButton.hasIcon(), true, '4');
-        await assert.eventually.equal(linkButton.getText(), 'Demo link', '5');
-        await assert.eventually.equal(linkButtonIcon.isBefore(), true, '6');
-        await assert.eventually.equal(linkButtonIcon.getIcon(), 'arrow-right-fat');
-    });
+    // it('als gebruiker wil ik het verschil kunnen zien tussen een link en een gewone knop', async () => {
+    //     const primaryButton = await vlButtonPage.getPrimaryButton();
+    //     const linkButton = await vlButtonPage.getLinkButton();
+    //     const linkButtonIcon = await linkButton.getIcon();
+    //     await assert.eventually.equal(primaryButton.isLink(), false, '1');
+    //     await assert.eventually.equal(primaryButton.hasIcon(), false), '2';
+    //     await assert.eventually.equal(linkButton.isLink(), true), '3';
+    //     await assert.eventually.equal(linkButton.hasIcon(), true, '4');
+    //     await assert.eventually.equal(linkButton.getText(), 'Demo link', '5');
+    //     await assert.eventually.equal(linkButtonIcon.isBefore(), true, '6');
+    //     await assert.eventually.equal(linkButtonIcon.getIcon(), 'arrow-right-fat');
+    // });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een pill en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
-        const pillButton = await vlButtonPage.getPillButton();
-        await assert.eventually.equal(primaryButton.isPill(), false);
-        await assert.eventually.equal(pillButton.isPill(), true);
-        await assert.eventually.equal(pillButton.getText(), 'Optie 1');
-    });
+    // it('als gebruiker wil ik het verschil kunnen zien tussen een pill en een gewone knop', async () => {
+    //     const primaryButton = await vlButtonPage.getPrimaryButton();
+    //     const pillButton = await vlButtonPage.getPillButton();
+    //     await assert.eventually.equal(primaryButton.isPill(), false);
+    //     await assert.eventually.equal(pillButton.isPill(), true);
+    //     await assert.eventually.equal(pillButton.getText(), 'Optie 1');
+    // });
 
-    // type gaat gewijzigd worden naar data-vl-type omdat er nu een clash is met het default type attribuut
-    it('als gebruiker wil ik het verschil kunnen zien tussen een pill knop van een bepaald type en een gewone pill knop', async () => {
-        const pillButton = await vlButtonPage.getPillButton();
-        const pillSuccessButton = await vlButtonPage.getPillSuccessButton();
-        const pillWarningButton = await vlButtonPage.getPillWarningButton();
-        const pillErrorButton = await vlButtonPage.getPillErrorButton();
-        await assert.eventually.equal(pillButton.isPill(), true);
-        await assert.eventually.equal(pillButton.isSuccessPill(), false);
-        await assert.eventually.equal(pillButton.isWarningPill(), false);
-        await assert.eventually.equal(pillButton.isErrorPill(), false);
-        await assert.eventually.equal(pillButton.getText(), 'Optie 1');
-        await assert.eventually.equal(pillButton.getPillType(), undefined);
-        await assert.eventually.equal(pillSuccessButton.isPill(), true);
-        await assert.eventually.equal(pillSuccessButton.isSuccessPill(), true);
-        await assert.eventually.equal(pillSuccessButton.isWarningPill(), false);
-        await assert.eventually.equal(pillSuccessButton.isErrorPill(), false);
-        await assert.eventually.equal(pillSuccessButton.getText(), 'Optie 1');
-        await assert.eventually.equal(pillSuccessButton.getPillType(), 'success');
-        await assert.eventually.equal(pillWarningButton.isPill(), true);
-        await assert.eventually.equal(pillWarningButton.isSuccessPill(), false);
-        await assert.eventually.equal(pillWarningButton.isWarningPill(), true);
-        await assert.eventually.equal(pillWarningButton.isErrorPill(), false);
-        await assert.eventually.equal(pillWarningButton.getText(), 'Optie 1');
-        await assert.eventually.equal(pillWarningButton.getPillType(), 'warning');
-        await assert.eventually.equal(pillErrorButton.isPill(), true);
-        await assert.eventually.equal(pillErrorButton.isSuccessPill(), false);
-        await assert.eventually.equal(pillErrorButton.isWarningPill(), false);
-        await assert.eventually.equal(pillErrorButton.isErrorPill(), true);
-        await assert.eventually.equal(pillErrorButton.getText(), 'Optie 1');
-        await assert.eventually.equal(pillErrorButton.getPillType(), 'error');
-    });
+    // // type gaat gewijzigd worden naar data-vl-type omdat er nu een clash is met het default type attribuut
+    // it('als gebruiker wil ik het verschil kunnen zien tussen een pill knop van een bepaald type en een gewone pill knop', async () => {
+    //     const pillButton = await vlButtonPage.getPillButton();
+    //     const pillSuccessButton = await vlButtonPage.getPillSuccessButton();
+    //     const pillWarningButton = await vlButtonPage.getPillWarningButton();
+    //     const pillErrorButton = await vlButtonPage.getPillErrorButton();
+    //     await assert.eventually.equal(pillButton.isPill(), true);
+    //     await assert.eventually.equal(pillButton.isSuccessPill(), false);
+    //     await assert.eventually.equal(pillButton.isWarningPill(), false);
+    //     await assert.eventually.equal(pillButton.isErrorPill(), false);
+    //     await assert.eventually.equal(pillButton.getText(), 'Optie 1');
+    //     await assert.eventually.equal(pillButton.getPillType(), undefined);
+    //     await assert.eventually.equal(pillSuccessButton.isPill(), true);
+    //     await assert.eventually.equal(pillSuccessButton.isSuccessPill(), true);
+    //     await assert.eventually.equal(pillSuccessButton.isWarningPill(), false);
+    //     await assert.eventually.equal(pillSuccessButton.isErrorPill(), false);
+    //     await assert.eventually.equal(pillSuccessButton.getText(), 'Optie 1');
+    //     await assert.eventually.equal(pillSuccessButton.getPillType(), 'success');
+    //     await assert.eventually.equal(pillWarningButton.isPill(), true);
+    //     await assert.eventually.equal(pillWarningButton.isSuccessPill(), false);
+    //     await assert.eventually.equal(pillWarningButton.isWarningPill(), true);
+    //     await assert.eventually.equal(pillWarningButton.isErrorPill(), false);
+    //     await assert.eventually.equal(pillWarningButton.getText(), 'Optie 1');
+    //     await assert.eventually.equal(pillWarningButton.getPillType(), 'warning');
+    //     await assert.eventually.equal(pillErrorButton.isPill(), true);
+    //     await assert.eventually.equal(pillErrorButton.isSuccessPill(), false);
+    //     await assert.eventually.equal(pillErrorButton.isWarningPill(), false);
+    //     await assert.eventually.equal(pillErrorButton.isErrorPill(), true);
+    //     await assert.eventually.equal(pillErrorButton.getText(), 'Optie 1');
+    //     await assert.eventually.equal(pillErrorButton.getPillType(), 'error');
+    // });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een input addon en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
-        const inputAddonButton = await vlButtonPage.getInputAddonButton();
-        const inputAddonButtonIcon = await inputAddonButton.getIcon();
-        await assert.eventually.equal(primaryButton.isInputAddon(), false);
-        await assert.eventually.equal(inputAddonButton.isInputAddon(), true);
-        await assert.eventually.equal(inputAddonButton.hasText(), false);
-        await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
-    });
+    // it('als gebruiker wil ik het verschil kunnen zien tussen een input addon en een gewone knop', async () => {
+    //     const primaryButton = await vlButtonPage.getPrimaryButton();
+    //     const inputAddonButton = await vlButtonPage.getInputAddonButton();
+    //     const inputAddonButtonIcon = await inputAddonButton.getIcon();
+    //     await assert.eventually.equal(primaryButton.isInputAddon(), false);
+    //     await assert.eventually.equal(inputAddonButton.isInputAddon(), true);
+    //     await assert.eventually.equal(inputAddonButton.hasText(), false);
+    //     await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
+    // });
 });
