@@ -38,7 +38,6 @@
     "demo": "http-server"
   },
   "dependencies": {
-    "chromedriver": "^79.0.0",
     "vl-ui-core": "^3.1.0",
     "vl-ui-icon": "^2.1.1",
     "vl-ui-input-addon": "^1.0.1",
@@ -59,6 +58,6 @@
     "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
     "uglify-es": "3.3.9",
-    "vl-ui-util": "^3.4.1"
+    "vl-ui-util": "github:milieuinfo/webcomponent-vl-ui-util#node-max-session"
   }
 }
