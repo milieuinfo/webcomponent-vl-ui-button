@@ -18,7 +18,7 @@
     "prepare:util": "npm explore vl-ui-util -- npm run util",
     "pretest": "npm install chromedriver --chromedriver-force-download",
     "test": "npm run test:unit && npm run test:e2e",
-    "test:unit": "wct --config-file ./wct.local.conf.json --verbose",
+    "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
     "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
     "test:grid": "wct --config-file ./wct.docker.conf.json && npm run test:e2e:grid",
