@@ -1,6 +1,4 @@
-import { NativeVlElement, define } from '/node_modules/vl-ui-core/vl-core.js';
-import { VlPillElement } from "/node_modules/vl-ui-pill/vl-pill.js";
-import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/vl-input-addon.js";
+import { NativeVlElement, define } from 'vl-core';
 
 export const VlButtonElement = (SuperClass) => {
     return class extends NativeVlElement(SuperClass) {
@@ -68,36 +66,4 @@ export const VlButtonElement = (SuperClass) => {
  */
 export class VlButton extends VlButtonElement(HTMLButtonElement) {}
 
-/**
- * VlLinkButton
- * @class
- * @classdesc Gebruik de vl-link-button om een ​​call-to-action toe te voegen.
- *
- * @extends NativeVlElement
- *
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
- * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
- * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-link.html|Demo}
- */
-export class VlLinkButton extends VlButtonElement(HTMLAnchorElement) {}
-
-export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElement)) {
-    constructor() {
-        super();
-        this.classList.add('vl-pill');
-        this.classList.add('vl-pill--clickable');
-    }
-
-    get _stylePath() {
-        return '../style.css';
-    }
-}
-
-export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
-    
-} 
-
 define('vl-button', VlButton, {extends: 'button'});
-define('vl-button-pill', VlButtonPill, {extends: 'button'});
-define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});
-define('vl-link-button', VlLinkButton, {extends: 'a'});
