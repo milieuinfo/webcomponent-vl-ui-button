@@ -1,3 +1,5 @@
+const { VlButton } = require('./vl-button.src.js');
+
 module.exports = { 
-    'VlButton': require('./test/e2e/components/vl-button')
+    VlButton
 }
