@@ -1,47 +1,7 @@
-import { NativeVlElement, define } from 'vl-ui-core';
-
-export const VlButtonElement = (SuperClass) => {
-    return class extends NativeVlElement(SuperClass) {
-        static get _observedAttributes() {
-            return [];
-        }
-
-        static get _observedClassAttributes() {
-            return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary', 'loading'];
-        }
-
-        connectedCallback() {
-            this.classList.add('vl-button');
-            setTimeout(() => {
-                this._setIconClass();
-            });
-        }
-
-        get _classPrefix() {
-            return 'vl-button--';
-        }
-
-        get _stylePath() {
-            return '../style.css';
-        }
-
-        _setIconClass() {
-            const icon = this.querySelector('[is="vl-icon"]');
-            if (icon) {
-                let suffix = '';
-                suffix += icon.hasAttribute('before') ? '-before' : '';
-                suffix += icon.hasAttribute('after') ? '-after' : '';
-                this.classList.add(this._classPrefix + 'icon' + suffix);
-                icon.classList.add('vl-button__icon');
-                if (suffix) {
-                    icon.classList.add('vl-button__icon-' + suffix);
-                }
-                icon.classList.remove('vl-icon--before');
-                icon.classList.remove('vl-icon--after');
-            }
-        }
-    }
-};
+import { NativeVlElement, define } from 'vl-core';
+import { VlLinkElement } from "vl-link";
+import { VlPillElement } from "vl-pill";
+import { VlInputAddonElement } from "vl-input-addon";
 
 /**
  * VlButton
@@ -64,6 +24,58 @@ export const VlButtonElement = (SuperClass) => {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html|Demo}
  */
-export class VlButton extends VlButtonElement(HTMLButtonElement) {}
+export class VlButton extends NativeVlElement(HTMLButtonElement) {
+    static get _observedAttributes() {
+        return [];
+    }
+
+    static get _observedClassAttributes() {
+        return ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary', 'loading'];
+    }
+
+    connectedCallback() {
+        this.classList.add('vl-button');
+        setTimeout(() => {
+            this._setIconClass();
+        });
+    }
+
+    get _classPrefix() {
+        return 'vl-button--';
+    }
+
+    _setIconClass() {
+        const icon = this.querySelector('[is="vl-icon"]');
+        if (icon) {
+            let suffix = '';
+            suffix += icon.hasAttribute('before') ? '-before' : '';
+            suffix += icon.hasAttribute('after') ? '-after' : '';
+            this.classList.add(this._classPrefix + 'icon' + suffix);
+            icon.classList.add('vl-button__icon');
+            if (suffix) {
+                icon.classList.add('vl-button__icon-' + suffix);
+            }
+            icon.classList.remove('vl-icon--before');
+            icon.classList.remove('vl-icon--after');
+        }
+    }
+}
+
+export class VlButtonLink extends VlLinkElement(HTMLButtonElement) {}
+
+export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElement)) {
+    constructor() {
+        super();
+        this.classList.add('vl-pill');
+        this.classList.add('vl-pill--clickable');
+    }
+}
+
+export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
+    
+} 
 
 define('vl-button', VlButton, {extends: 'button'});
+define('vl-button-link', VlButtonLink, {extends: 'button'});
+define('vl-button-pill', VlButtonPill, {extends: 'button'});
+define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});
