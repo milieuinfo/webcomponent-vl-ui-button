@@ -5,6 +5,10 @@
   "author": "DIDM",
   "license": "MIT",
   "main": "index.js",
+  "exports": {
+    "import": "./vl-button.js",
+    "require": "./vl-button.src.js"
+  },
   "homepage": "https://github.com/milieuinfo/webcomponent-vl-ui-button#readme",
   "bugs": {
     "url": "https://github.com/milieuinfo/webcomponent-vl-ui-button/issues"
