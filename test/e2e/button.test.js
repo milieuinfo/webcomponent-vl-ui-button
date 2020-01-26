@@ -63,13 +63,6 @@ describe('vl-button', async () => {
         await assert.eventually.equal(blockButton.isBlock(), true);
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een block en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
-        const blockButton = await vlButtonPage.getBlockButton();
-        await assert.eventually.equal(primaryButton.isBlock(), false);
-        await assert.eventually.equal(blockButton.isBlock(), true);
-    });
-
     it('als gebruiker wil ik het verschil kunnen zien tussen een large en een gewone knop', async () => {
         const primaryButton = await vlButtonPage.getPrimaryButton();
         const largeButton = await vlButtonPage.getLargeButton();
