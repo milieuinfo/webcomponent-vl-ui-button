@@ -5,10 +5,8 @@ const VlButtonPage = require('./pages/vl-button.page');
 describe('vl-button', async () => {
     const vlButtonPage = new VlButtonPage(driver);
 
-    before((done) => {
-        vlButtonPage.load().then(() => {
-            done()
-        });
+    before(() => {
+        return vlButtonPage.load();
     });
 
     it('als gebruiker wil ik dat mijn klik geregistreerd wordt wanneer ik op een knop klik', async () => {
@@ -174,5 +172,12 @@ describe('vl-button', async () => {
         await assert.eventually.equal(inputAddonButton.isInputAddon(), true);
         await assert.eventually.equal(inputAddonButton.hasText(), false);
         await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
+    });
+
+    after((done) => { 
+        if (driver) {
+            driver.quit();
+        }
+        done();
     });
 });
