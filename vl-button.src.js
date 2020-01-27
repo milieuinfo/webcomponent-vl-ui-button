@@ -1,7 +1,7 @@
-import { NativeVlElement, define } from 'vl-core';
-import { VlLinkElement } from "vl-link";
-import { VlPillElement } from "vl-pill";
-import { VlInputAddonElement } from "vl-input-addon";
+import { NativeVlElement, define } from 'vl-ui-core';
+import { VlLinkElement } from "vl-ui-link";
+import { VlPillElement } from "vl-ui-pill";
+import { VlInputAddonElement } from "vl-ui-input-addon";
 
 /**
  * VlButton
