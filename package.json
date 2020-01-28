@@ -4,6 +4,7 @@
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "author": "DIDM",
   "license": "MIT",
+  "type": "module",
   "main": "src/index.js",
   "exports": {
     "require": "index.js",
