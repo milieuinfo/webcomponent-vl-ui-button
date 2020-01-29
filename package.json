@@ -58,6 +58,6 @@
     "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
     "uglify-es": "3.3.9",
-    "vl-ui-util": "^3.4.2"
+    "vl-ui-util": "^3.4.4"
   }
 }
