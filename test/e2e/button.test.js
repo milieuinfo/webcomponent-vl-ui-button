@@ -115,13 +115,9 @@ describe('vl-button', async () => {
     it('als gebruiker wil ik het verschil kunnen zien tussen een link en een gewone knop', async () => {
         const primaryButton = await vlButtonPage.getPrimaryButton();
         const linkButton = await vlButtonPage.getLinkButton();
-        const linkButtonIcon = await linkButton.getIcon();
-        await assert.eventually.equal(primaryButton.isLink(), false, '1');
-        await assert.eventually.equal(primaryButton.hasIcon(), false), '2';
-        await assert.eventually.equal(linkButton.hasIcon(), true, '4');
-        await assert.eventually.equal(linkButton.getText(), 'Ga naar startpagina', '5');
-        await assert.eventually.equal(linkButtonIcon.isBefore(), true, '6');
-        await assert.eventually.equal(linkButtonIcon.getIcon(), 'arrow-right-fat');
+        await assert.eventually.equal(primaryButton.isLink(), false);
+        await assert.eventually.equal(primaryButton.hasIcon(), false);
+        await assert.eventually.equal(linkButton.getText(), 'Ga naar startpagina');
     });
 
     it('als gebruiker wil ik het verschil kunnen zien tussen een pill en een gewone knop', async () => {
