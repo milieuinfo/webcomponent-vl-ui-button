@@ -24,7 +24,7 @@ export const VlButtonElement = (SuperClass) => {
         }
 
         get _stylePath() {
-            return '/node_modules/vl-ui-button/style.css';
+            return '../style.css';
         }
 
         _setIconClass() {
@@ -89,7 +89,7 @@ export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElemen
     }
 
     get _stylePath() {
-        return '/node_modules/vl-ui-button/style.css';
+        return '../style.css';
     }
 }
 
