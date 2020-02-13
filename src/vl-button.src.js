@@ -87,10 +87,6 @@ export class VlButtonPill extends VlPillElement(NativeVlElement(HTMLButtonElemen
         this.classList.add('vl-pill');
         this.classList.add('vl-pill--clickable');
     }
-
-    get _stylePath() {
-        return '../style.css';
-    }
 }
 
 export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
