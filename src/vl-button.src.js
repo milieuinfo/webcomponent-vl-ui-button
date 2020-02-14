@@ -23,10 +23,6 @@ export const VlButtonElement = (SuperClass) => {
             return 'vl-button--';
         }
 
-        get _stylePath() {
-            return '../style.css';
-        }
-
         _setIconClass() {
             const icon = this.querySelector('[is="vl-icon"]');
             if (icon) {
