@@ -43,6 +43,7 @@
     "release:prepare:build": "npm run release:prepare:build:es6 && npm run release:prepare:build:es6:min && npm run release:prepare:build:node",
     "release:prepare:build:es6": "npm run release:prepare:build:es6:copy && npm run release:prepare:build:es6:replace",
     "release:prepare:build:es6:copy": "cp -R -f ./src/*.src.js ./vl-button.js",
+    "release:prepare:build:es6:replace": "npm run release:prepare:build:es6:replace:css",
     "release:prepare:build:es6:replace:css": "replace \"'/style.css'\" \"'/node_modules/vl-ui-button/style.css'\" vl-button.js",
     "release:prepare:build:es6:min": "npm run release:prepare:build:es6:min:copy && npm run release:prepare:build:es6:min:explode && npm run release:prepare:build:es6:min:minify",
     "release:prepare:build:es6:min:copy": "cp -R -f ./src/*.src.js ./vl-button.tmp.min.js",
