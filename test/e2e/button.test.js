@@ -1,11 +1,12 @@
 
 const { assert, driver } = require('vl-ui-core').Test.Setup;
+const { Config} = require('vl-ui-core').Test;
 const VlButtonPage = require('./pages/vl-button.page');
 
 describe('vl-button', async () => {
     const vlButtonPage = new VlButtonPage(driver);
 
-    before(() => {
+    before(async () => {
         return vlButtonPage.load();
     });
 
@@ -19,8 +20,8 @@ describe('vl-button', async () => {
     it('als gebruiker wil ik niet dat mijn klik geregistreerd wordt wanneer ik op een disabled knop klik', async () => {
         const button = await vlButtonPage.getDisabledButton();
         await assert.eventually.equal(button.getText(), 'Gegevens opslaan'),
-        await button.click(),
-        await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
+            await button.click(),
+            await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
         await assert.eventually.equal(button.isEnabled(), false);
         await assert.eventually.equal(button.isDisabled(), true);
     });
@@ -118,6 +119,10 @@ describe('vl-button', async () => {
         await assert.eventually.equal(primaryButton.isLink(), false);
         await assert.eventually.equal(primaryButton.hasIcon(), false);
         await assert.eventually.equal(linkButton.getText(), 'Ga naar startpagina');
+        
+        await linkButton.click();
+        await assert.eventually.equal(driver.getCurrentUrl(), Config.baseUrl + '/demo/');
+        await driver.navigate().back();
     });
 
     it('als gebruiker wil ik het verschil kunnen zien tussen een pill en een gewone knop', async () => {
@@ -170,10 +175,7 @@ describe('vl-button', async () => {
         await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
     });
 
-    after((done) => { 
-        if (driver) {
-            driver.quit();
-        }
-        done();
+    after(async () => {
+       return driver.quit();
     });
 });
