@@ -170,10 +170,4 @@ describe('vl-button', async () => {
         await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
     });
 
-    after((done) => { 
-        if (driver) {
-            driver.quit();
-        }
-        done();
-    });
 });
