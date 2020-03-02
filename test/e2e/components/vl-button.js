@@ -1,10 +1,7 @@
 const { VlElement } = require('vl-ui-core').Test;
 const { VlIcon } = require('vl-ui-icon').Test;
 
-class VlButton extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
+class VlButtonElement extends VlElement {  
 
     async getIcon() {
         return new VlIcon(this.driver, this.selector + ' [is="vl-icon"]');
@@ -42,9 +39,25 @@ class VlButton extends VlElement {
         return this.hasAttribute('tertiary');
     }
 
+    async hasIcon() {
+        try {
+            await this.getIcon();
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+}
+
+class VlButton extends VlButtonElement  { }
+
+class VlLinkButton extends VlButtonElement { 
     async isLink() {
         return this.hasClass('vl-link');
     }
+} 
+
+class VlButtonPill extends VlButtonElement {
 
     async isPill() {
         return this.hasClass('vl-pill');
@@ -66,18 +79,18 @@ class VlButton extends VlElement {
         return (await this.getPillType()) === 'error';
     }
 
+}
+
+class VlButtonInputAddon extends VlButtonElement {
+
     async isInputAddon() {
         return this.hasClass('vl-input-addon');
     }
-
-    async hasIcon() {
-        try {
-            await this.getIcon();
-            return true;
-        } catch(e) {
-            return false;
-        }
-    }
 }
 
-module.exports = VlButton;
+module.exports = { 
+    VlButton, 
+    VlLinkButton,
+    VlButtonPill,
+    VlButtonInputAddon
+};

@@ -19,9 +19,9 @@ describe('vl-button', async () => {
 
     it('als gebruiker wil ik niet dat mijn klik geregistreerd wordt wanneer ik op een disabled knop klik', async () => {
         const button = await vlButtonPage.getDisabledButton();
-        await assert.eventually.equal(button.getText(), 'Gegevens opslaan'),
-            await button.click(),
-            await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
+        await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
+        await button.click();
+        await assert.eventually.equal(button.getText(), 'Gegevens opslaan');
         await assert.eventually.equal(button.isEnabled(), false);
         await assert.eventually.equal(button.isDisabled(), true);
     });
@@ -113,11 +113,8 @@ describe('vl-button', async () => {
         await assert.eventually.equal(iconButton.hasIcon(), true);
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een link en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
+    it('als gebruiker ga ik naar een url als ik op een linkbutton klik', async () => {
         const linkButton = await vlButtonPage.getLinkButton();
-        await assert.eventually.equal(primaryButton.isLink(), false);
-        await assert.eventually.equal(primaryButton.hasIcon(), false);
         await assert.eventually.equal(linkButton.getText(), 'Ga naar startpagina');
         
         await linkButton.click();
@@ -125,10 +122,8 @@ describe('vl-button', async () => {
         await driver.navigate().back();
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een pill en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
+    it('Als gebruiker kan ik text van een pill knop lezen', async () => {
         const pillButton = await vlButtonPage.getPillButton();
-        await assert.eventually.equal(primaryButton.isPill(), false);
         await assert.eventually.equal(pillButton.isPill(), true);
         await assert.eventually.equal(pillButton.getText(), 'Optie 1');
     });
@@ -165,17 +160,11 @@ describe('vl-button', async () => {
         await assert.eventually.equal(pillErrorButton.getPillType(), 'error');
     });
 
-    it('als gebruiker wil ik het verschil kunnen zien tussen een input addon en een gewone knop', async () => {
-        const primaryButton = await vlButtonPage.getPrimaryButton();
+    it('als gebruiker zie ik een inputaddon op een correcte manier', async () => {
         const inputAddonButton = await vlButtonPage.getInputAddonButton();
         const inputAddonButtonIcon = await inputAddonButton.getIcon();
-        await assert.eventually.equal(primaryButton.isInputAddon(), false);
         await assert.eventually.equal(inputAddonButton.isInputAddon(), true);
         await assert.eventually.equal(inputAddonButton.hasText(), false);
         await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
-    });
-
-    after(async () => {
-       return driver.quit();
     });
 });
