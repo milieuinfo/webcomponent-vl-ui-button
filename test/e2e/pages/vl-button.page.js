@@ -1,4 +1,4 @@
-const { VlButton, VlLinkButton, VlButtonInputAddon } = require('../components/vl-button');
+const { VlButton, VlLinkButton } = require('../components/vl-button');
 const { Page, Config } = require('vl-ui-core').Test;
 
 class VlButtonPage extends Page {
