@@ -10,9 +10,6 @@ class VlButtonPage extends Page {
         return new VlLinkButton(this.driver, selector);
     }
    
-    async _getButtonInputAddon(selector) {
-        return new VlButtonInputAddon(this.driver, selector);
-    }
     async getPrimaryButton() {
         return this._getButton('#button-primary');
     }
@@ -71,10 +68,6 @@ class VlButtonPage extends Page {
 
     async getLinkButton() {
         return this._getLinkButton('#button-a-link');
-    }
-
-    async getInputAddonButton() {
-        return this._getButtonInputAddon('#button-input-addon');
     }
 
     async load() {

@@ -19,11 +19,7 @@
 
   
 
-  <test-fixture id="vl-button-input-addon-fixture">
-    <template>
-      <button is="vl-button-input-addon"></button>
-    </template>
-  </test-fixture>
+  
 
   <test-fixture id="vl-button-with-icon-fixture">
     <template>
@@ -74,12 +70,6 @@
           assert.isFalse(button.classList.contains('vl-button--' + attribuut));
         });
         done();
-      });
-
-
-      test('input addon variant bevat juiste type class', () => {
-        const inputAddonButton = fixture('vl-button-input-addon-fixture');
-        assert.isTrue(inputAddonButton.classList.contains('vl-input-addon'));
       });
 
       test('met icon child element bevat de juiste class', (done) => {

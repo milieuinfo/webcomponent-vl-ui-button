@@ -39,7 +39,7 @@ describe('vl-button', async () => {
         const iconBeforeButtonIcon = await iconBeforeButton.getIcon();
         await assert.eventually.isFalse(primaryButton.hasIcon());
         await assert.eventually.isTrue(iconBeforeButton.hasIcon());
-        await assert.eventually.equal(iconBeforeButtonIcon.getIcon(), 'location');
+        await assert.eventually.equal(iconBeforeButtonIcon.getType(), 'location');
     });
 
     it('als gebruiker wil ik een icoon voor en na de tekst in de knop kunnen zien', async () => {
@@ -117,14 +117,5 @@ describe('vl-button', async () => {
         const linkButton = await vlButtonPage.getLinkButton();
         await assert.eventually.isTrue(linkButton.isDisplayed());
         await assert.eventually.equal(linkButton.getText(), 'Ga naar startpagina');
-    });
-
-    it('als gebruiker zie ik een input addon', async () => {
-        const inputAddonButton = await vlButtonPage.getInputAddonButton();
-        const inputAddonButtonIcon = await inputAddonButton.getIcon();
-        await assert.eventually.isTrue(inputAddonButton.isDisplayed());
-        await assert.eventually.isTrue(inputAddonButtonIcon.isDisplayed());
-        await assert.eventually.isFalse(inputAddonButton.hasText());
-        await assert.eventually.equal(inputAddonButtonIcon.getIcon(), 'location');
     });
 });

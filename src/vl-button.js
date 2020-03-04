@@ -1,5 +1,4 @@
 import { NativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
-import { VlInputAddonElement } from "/node_modules/vl-ui-input-addon/dist/vl-input-addon.js";
 
 export const VlButtonElement = (SuperClass) => {
     return class extends NativeVlElement(SuperClass) {
@@ -76,12 +75,5 @@ export class VlButton extends VlButtonElement(HTMLButtonElement) { }
  */
 export class VlLinkButton extends VlButtonElement(HTMLAnchorElement) { }
 
-
-
-export class VlButtonInputAddon extends VlInputAddonElement(NativeVlElement(HTMLButtonElement)) {
-    
-} 
-
 define('vl-button', VlButton, {extends: 'button'});
-define('vl-button-input-addon', VlButtonInputAddon, {extends: 'button'});
 define('vl-link-button', VlLinkButton, {extends: 'a'});

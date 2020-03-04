@@ -1,5 +1,4 @@
 const { VlElement } = require('vl-ui-core').Test;
-const { VlInputAddon } = require('vl-ui-input-addon').Test;
 const { By } = require('selenium-webdriver');
 
 class VlButtonElement extends VlElement {  
@@ -58,19 +57,9 @@ class VlButton extends VlButtonElement  { }
 
 class VlLinkButton extends VlButtonElement { } 
 
-class VlButtonInputAddon extends VlInputAddon {
 
-    async getIcon() {
-        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
-        if (icon)  {
-            const { VlIcon } = require('vl-ui-icon').Test;
-            return new VlIcon(this.driver, icon);
-        } 
-    }
- }
 
 module.exports = { 
     VlButton, 
-    VlLinkButton,
-    VlButtonInputAddon
+    VlLinkButton
 };
