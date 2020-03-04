@@ -1,5 +1,4 @@
 const { VlElement } = require('vl-ui-core').Test;
-const { VlInputAddon } = require('vl-ui-input-addon').Test;
 const { By } = require('selenium-webdriver');
 
 class VlButtonElement extends VlElement {  
@@ -58,40 +57,9 @@ class VlButton extends VlButtonElement  { }
 
 class VlLinkButton extends VlButtonElement { } 
 
-class VlButtonPill extends VlButtonElement {
 
-    async getPillType() {
-        return this.getAttribute('data-vl-type');
-    }
-
-    async isSuccessPill() {
-        return (await this.getPillType()) === 'success';
-    }
-
-    async isWarningPill() {
-        return (await this.getPillType()) === 'warning';
-    }
-
-    async isErrorPill() {
-        return (await this.getPillType()) === 'error';
-    }
-
-}
-
-class VlButtonInputAddon extends VlInputAddon {
-
-    async getIcon() {
-        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
-        if (icon)  {
-            const { VlIcon } = require('vl-ui-icon').Test;
-            return new VlIcon(this.driver, icon);
-        } 
-    }
- }
 
 module.exports = { 
     VlButton, 
-    VlLinkButton,
-    VlButtonPill,
-    VlButtonInputAddon
+    VlLinkButton
 };
