@@ -58,26 +58,6 @@ class VlButton extends VlButtonElement  { }
 
 class VlLinkButton extends VlButtonElement { } 
 
-class VlButtonPill extends VlButtonElement {
-
-    async getPillType() {
-        return this.getAttribute('data-vl-type');
-    }
-
-    async isSuccessPill() {
-        return (await this.getPillType()) === 'success';
-    }
-
-    async isWarningPill() {
-        return (await this.getPillType()) === 'warning';
-    }
-
-    async isErrorPill() {
-        return (await this.getPillType()) === 'error';
-    }
-
-}
-
 class VlButtonInputAddon extends VlInputAddon {
 
     async getIcon() {
@@ -92,6 +72,5 @@ class VlButtonInputAddon extends VlInputAddon {
 module.exports = { 
     VlButton, 
     VlLinkButton,
-    VlButtonPill,
     VlButtonInputAddon
 };

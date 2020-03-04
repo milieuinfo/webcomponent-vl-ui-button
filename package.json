@@ -46,14 +46,12 @@
   "dependencies": {
     "vl-ui-core": "^5.0.1",
     "vl-ui-link": "^4.0.0",
-    "vl-ui-input-addon": "^3.0.0",
-    "vl-ui-pill": "^3.0.0"
+    "vl-ui-input-addon": "^3.0.0"
   },
   "peerDependencies": {
     "vl-ui-core": "^5.0.1",
     "vl-ui-link": "^4.0.0",
-    "vl-ui-input-addon": "^3.0.0",
-    "vl-ui-pill": "^3.0.0"
+    "vl-ui-input-addon": "^3.0.0"
   },
   "devDependencies": {
     "@govflanders/vl-ui-button": "3.9.1",
