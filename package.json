@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "author": "DIDM",
   "license": "MIT",
