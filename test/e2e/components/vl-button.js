@@ -1,13 +1,15 @@
 const { VlElement } = require('vl-ui-core').Test;
-const { VlIcon } = require('vl-ui-icon').Test;
+const { VlInputAddon } = require('vl-ui-input-addon').Test;
+const { By } = require('selenium-webdriver');
 
-class VlButton extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
+class VlButtonElement extends VlElement {  
 
     async getIcon() {
-        return new VlIcon(this.driver, this.selector + ' [is="vl-icon"]');
+        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
+        if (icon)  {
+            const { VlIcon } = require('vl-ui-icon').Test;
+            return new VlIcon(this.driver, icon);
+        } 
     }
 
     async isError() {
@@ -42,13 +44,21 @@ class VlButton extends VlElement {
         return this.hasAttribute('tertiary');
     }
 
-    async isLink() {
-        return this.hasClass('vl-link');
+    async hasIcon() {
+        try {
+            await this.getIcon();
+            return true;
+        } catch(e) {
+            return false;
+        }
     }
+}
 
-    async isPill() {
-        return this.hasClass('vl-pill');
-    }
+class VlButton extends VlButtonElement  { }
+
+class VlLinkButton extends VlButtonElement { } 
+
+class VlButtonPill extends VlButtonElement {
 
     async getPillType() {
         return this.getAttribute('data-vl-type');
@@ -66,18 +76,22 @@ class VlButton extends VlElement {
         return (await this.getPillType()) === 'error';
     }
 
-    async isInputAddon() {
-        return this.hasClass('vl-input-addon');
-    }
-
-    async hasIcon() {
-        try {
-            await this.getIcon();
-            return true;
-        } catch(e) {
-            return false;
-        }
-    }
 }
 
-module.exports = VlButton;
+class VlButtonInputAddon extends VlInputAddon {
+
+    async getIcon() {
+        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
+        if (icon)  {
+            const { VlIcon } = require('vl-ui-icon').Test;
+            return new VlIcon(this.driver, icon);
+        } 
+    }
+ }
+
+module.exports = { 
+    VlButton, 
+    VlLinkButton,
+    VlButtonPill,
+    VlButtonInputAddon
+};
