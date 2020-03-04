@@ -1,11 +1,15 @@
 const { VlElement } = require('vl-ui-core').Test;
-const { VlIcon } = require('vl-ui-icon').Test;
 const { VlInputAddon } = require('vl-ui-input-addon').Test;
+const { By } = require('selenium-webdriver');
 
 class VlButtonElement extends VlElement {  
 
     async getIcon() {
-        return new VlIcon(this.driver, this.selector + ' [is="vl-icon"]');
+        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
+        if (icon)  {
+            const { VlIcon } = require('vl-ui-icon').Test;
+            return new VlIcon(this.driver, icon);
+        } 
     }
 
     async isError() {
@@ -77,7 +81,11 @@ class VlButtonPill extends VlButtonElement {
 class VlButtonInputAddon extends VlInputAddon {
 
     async getIcon() {
-        return new VlIcon(this.driver, this.selector + ' [is="vl-icon"]');
+        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
+        if (icon)  {
+            const { VlIcon } = require('vl-ui-icon').Test;
+            return new VlIcon(this.driver, icon);
+        } 
     }
  }
 
