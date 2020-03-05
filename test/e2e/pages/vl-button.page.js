@@ -1,4 +1,4 @@
-const VlButton = require('../components/vl-button');
+const { VlButton, VlLinkButton } = require('../components/vl-button');
 const { Page, Config } = require('vl-ui-core').Test;
 
 class VlButtonPage extends Page {
@@ -6,6 +6,10 @@ class VlButtonPage extends Page {
         return new VlButton(this.driver, selector);
     }
 
+    async _getLinkButton(selector) {
+        return new VlLinkButton(this.driver, selector);
+    }
+   
     async getPrimaryButton() {
         return this._getButton('#button-primary');
     }
@@ -63,27 +67,7 @@ class VlButtonPage extends Page {
     }
 
     async getLinkButton() {
-        return this._getButton('#button-a-link');
-    }
-
-    async getPillButton() {
-        return this._getButton('#button-pill');
-    }
-
-    async getPillSuccessButton() {
-        return this._getButton('#button-pill-success');
-    }
-
-    async getPillWarningButton() {
-        return this._getButton('#button-pill-warning');
-    }
-
-    async getPillErrorButton() {
-        return this._getButton('#button-pill-error');
-    }
-
-    async getInputAddonButton() {
-        return this._getButton('#button-input-addon');
+        return this._getLinkButton('#button-a-link');
     }
 
     async load() {

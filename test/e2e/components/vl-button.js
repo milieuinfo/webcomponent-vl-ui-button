@@ -1,13 +1,14 @@
 const { VlElement } = require('vl-ui-core').Test;
-const { VlIcon } = require('vl-ui-icon').Test;
+const { By } = require('selenium-webdriver');
 
-class VlButton extends VlElement {  
-    constructor(driver, selector) {
-        super(driver, selector);
-    }
+class VlButtonElement extends VlElement {  
 
     async getIcon() {
-        return new VlIcon(this.driver, this.selector + ' [is="vl-icon"]');
+        const icon = await this.findElement(By.css(this.selector + ' [is="vl-icon"]'));
+        if (icon)  {
+            const { VlIcon } = require('vl-ui-icon').Test;
+            return new VlIcon(this.driver, icon);
+        } 
     }
 
     async isError() {
@@ -42,34 +43,6 @@ class VlButton extends VlElement {
         return this.hasAttribute('tertiary');
     }
 
-    async isLink() {
-        return this.hasClass('vl-link');
-    }
-
-    async isPill() {
-        return this.hasClass('vl-pill');
-    }
-
-    async getPillType() {
-        return this.getAttribute('data-vl-type');
-    }
-
-    async isSuccessPill() {
-        return (await this.getPillType()) === 'success';
-    }
-
-    async isWarningPill() {
-        return (await this.getPillType()) === 'warning';
-    }
-
-    async isErrorPill() {
-        return (await this.getPillType()) === 'error';
-    }
-
-    async isInputAddon() {
-        return this.hasClass('vl-input-addon');
-    }
-
     async hasIcon() {
         try {
             await this.getIcon();
@@ -80,4 +53,13 @@ class VlButton extends VlElement {
     }
 }
 
-module.exports = VlButton;
+class VlButton extends VlButtonElement  { }
+
+class VlLinkButton extends VlButtonElement { } 
+
+
+
+module.exports = { 
+    VlButton, 
+    VlLinkButton
+};

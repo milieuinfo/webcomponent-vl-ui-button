@@ -1,6 +1,6 @@
 {
   "name": "vl-ui-button",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Een button laat de gebruiker toe om een bepaalde actie uit te voeren. Welke soort actie dat is, staat aangegeven op de button in de vorm van een tekst of een icoon.",
   "author": "DIDM",
   "license": "MIT",
@@ -45,25 +45,19 @@
   },
   "dependencies": {
     "vl-ui-core": "^5.0.1",
-    "vl-ui-link": "^4.0.0",
-    "vl-ui-input-addon": "^3.0.0",
-    "vl-ui-pill": "^3.0.0"
+    "vl-ui-link": "^4.0.0"
   },
   "peerDependencies": {
     "vl-ui-core": "^5.0.1",
-    "vl-ui-link": "^4.0.0",
-    "vl-ui-input-addon": "^3.0.0",
-    "vl-ui-pill": "^3.0.0"
+    "vl-ui-link": "^4.0.0"
   },
   "devDependencies": {
     "@govflanders/vl-ui-button": "3.9.1",
     "@govflanders/vl-ui-core": "3.9.1",
     "@govflanders/vl-ui-icon": "3.9.1",
-    "@govflanders/vl-ui-input-addon": "3.9.1",
     "@govflanders/vl-ui-link": "3.9.1",
-    "@govflanders/vl-ui-pill": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
-    "vl-ui-icon": "^4.0.0",
-    "vl-ui-util": "^5.0.7"
+    "vl-ui-icon": "^4.0.1",
+    "vl-ui-util": "^5.0.8"
   }
 }
