@@ -4,7 +4,7 @@ const { By } = require('selenium-webdriver');
 class VlButtonElement extends VlElement {  
 
     async getIcon() {
-        const icon = await this.findElement(By.css('span[is="vl-icon"]'));
+        const icon = await this.findElement(By.css('[is="vl-icon"]'));
         if (icon) {
             const { VlIcon } = require('vl-ui-icon').Test;
             return new VlIcon(this.driver, icon);
