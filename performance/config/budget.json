@@ -20,10 +20,10 @@
       "font": 0
     },
     "score": {
-      "accessibility": 100,
-      "bestpractice": 100,
-      "privacy": 100,
-      "performance": 100
+      "accessibility": 50,
+      "bestpractice": 50,
+      "privacy": 50,
+      "performance": 50
     }
   }
 }
