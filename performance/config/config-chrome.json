@@ -1,0 +1,7 @@
+{
+    "extends": "base-config.json",
+    "browsertime": {
+        "browser": "chrome",
+        "outputFolder": "chrome-results"
+    }
+}
