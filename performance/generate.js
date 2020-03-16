@@ -1,8 +1,9 @@
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const fs = require('fs');
+const path = require('path');
 
-JSDOM.fromFile("vl-button.html").then(dom => {
+JSDOM.fromFile(path.join(__dirname, '../demo/vl-button.html')).then(dom => {
     const scripts = [];
     dom.window.document.querySelectorAll('script[type="module"]').forEach(s => scripts.push(s.outerHTML));
 
@@ -17,7 +18,7 @@ JSDOM.fromFile("vl-button.html").then(dom => {
 
     const html = `<html><head>${scripts.join('')}${stylesheets.join('')}</head><body>${demoMultiplied}</body></html>`;
 
-    fs.writeFileSync('performance.html', html, 'utf8', (err) => {
+    fs.writeFileSync(path.join(__dirname, '../performance/performance.html'), html, 'utf8', (err) => {
         if (err) throw err;
     });
 });

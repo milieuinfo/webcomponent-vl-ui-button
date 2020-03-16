@@ -25,6 +25,9 @@
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
+    "performance:generate": "node ./performance/generate.js",
+    "performance:start": "node ./performance/run.js",
+    "performance:run": "concurrently --kill-others \"npm:demo\" \"npm:performance:start\"",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
@@ -57,6 +60,8 @@
     "@govflanders/vl-ui-icon": "3.9.1",
     "@govflanders/vl-ui-link": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
+    "jsdom": "^16.2.1",
+    "concurrently": "5.1.0",
     "vl-ui-icon": "^4.0.1",
     "vl-ui-util": "^5.0.8"
   }
