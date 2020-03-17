@@ -1,7 +1,12 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+const { JSDOM } = require('jsdom');
 const fs = require('fs');
 const path = require('path');
+const argv = require('yargs').argv;
+
+if(!argv.iterations) {
+    process.exit(1);
+}
+
 
 JSDOM.fromFile(path.join(__dirname, '../demo/vl-button.html')).then(dom => {
     const scripts = [];
@@ -12,7 +17,7 @@ JSDOM.fromFile(path.join(__dirname, '../demo/vl-button.html')).then(dom => {
 
     const demo = dom.window.document.querySelectorAll('.demo')[0].outerHTML;
     let demoMultiplied = '';
-    for (i = 0; i < 100; i++) {
+    for (i = 0; i < argv.iterations; i++) {
         demoMultiplied += demo;
     }
 

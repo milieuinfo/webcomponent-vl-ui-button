@@ -1,0 +1,11 @@
+{
+    "extends": "base-config.json",
+    "browsertime": {
+        "browser": "firefox",
+        "proxy": {
+            "http": "http://forwardproxy-pr-build.lb.cumuli.be:3128",
+            "https": "http://forwardproxy-pr-build.lb.cumuli.be:3128"
+        }
+    },
+    "outputFolder": "firefox-results"
+}
