@@ -1,5 +1,5 @@
 {
-    "extends": "base-config.json",
+    "extends": "/performance/config/base-config.json",
     "browsertime": {
         "browser": "chrome"
     },

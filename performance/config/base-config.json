@@ -1,9 +1,9 @@
 {
     "browsertime": {
-        "delay": 1,
+        "delay": 1
     },
     "budget": {
-        "configPath": "budget.json",
+        "configPath": "/performance/config/budget.json",
         "output": "junit"
     }
 }
