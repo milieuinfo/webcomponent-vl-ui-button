@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 const { os } = require('os');
 
-const regex = new Regex(/bamboo/);
+const regex = new RegExp(/bamboo/);
 
 if(process.platform === "darwin") {
     execSync('docker run --rm -v "$(pwd)":/sitespeed.io sitespeedio/sitespeed.io --config=config/config-chrome.json http://host.docker.internal:8080/performance/performance.html', {stdio: 'inherit', cwd: __dirname});
