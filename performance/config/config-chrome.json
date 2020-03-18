@@ -1,7 +1,10 @@
 {
-    "extends": "/performance/config/base-config.json",
     "browsertime": {
         "browser": "chrome"
+    },
+    "budget": {
+        "configPath": "/performance/config/budget.json",
+        "output": "junit"
     },
     "outputFolder": "chrome-results"
 }
