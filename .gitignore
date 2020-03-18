@@ -3,5 +3,4 @@ node_modules
 .idea/
 *.css.map
 .vscode/**
-performance/chrome-results
-performance/firefox-results
+performance/results/*
