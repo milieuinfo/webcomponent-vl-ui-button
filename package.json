@@ -26,7 +26,7 @@
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
     "performance:generate": "node ./performance/generate.js --iterations=100",
-    "performance:run": "npm run performance:generate && concurrently --kill-others \"npm:demo\" \"node ./performance/run.js\"",
+    "performance:run": "npm run performance:generate && docker-compose -f docker-compose-performance.yml up --force-recreate --exit-code-from sitespeed-firefox",
     "test": "npm run test:unit && npm run test:e2e && npm run performance:run",
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",

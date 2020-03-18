@@ -3,7 +3,7 @@
         "browser": "chrome"
     },
     "budget": {
-        "configPath": "config/budget.json",
+        "configPath": "/sitespeed.io/config/budget.json",
         "output": "junit"
     },
     "outputFolder": "results/chrome"
