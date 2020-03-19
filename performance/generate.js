@@ -4,9 +4,9 @@ const path = require('path');
 const argv = require('yargs').argv;
 
 if(!argv.iterations) {
+    console.error('Please define the number of iterations via command-line (--iterations=xxx).');
     process.exit(1);
 }
-
 
 JSDOM.fromFile(path.join(__dirname, '../demo/vl-button.html')).then(dom => {
     const scripts = [];
