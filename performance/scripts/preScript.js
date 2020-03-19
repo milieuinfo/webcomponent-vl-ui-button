@@ -4,7 +4,7 @@ module.exports = async function (context, commands) {
 
     const hostname = 'demo';
     const port = '8080';
-    const path = 'performance/performance.html';
+    const path = 'demo/performance.html';
 
     return new Promise(resolve => {
         function poll() {

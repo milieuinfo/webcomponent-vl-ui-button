@@ -23,7 +23,7 @@ JSDOM.fromFile(path.join(__dirname, '../demo/vl-button.html')).then(dom => {
 
     const html = `<html><head>${scripts.join('')}${stylesheets.join('')}</head><body>${demoMultiplied}</body></html>`;
 
-    fs.writeFileSync(path.join(__dirname, '../performance/performance.html'), html, 'utf8', (err) => {
+    fs.writeFileSync(path.join(__dirname, '../demo/performance.html'), html, 'utf8', (err) => {
         if (err) throw err;
     });
 });
