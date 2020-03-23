@@ -25,7 +25,7 @@
   "scripts": {
     "prepare": "npm update --dev vl-ui-util && npm run prepare:util",
     "prepare:util": "npm explore vl-ui-util -- npm run util",
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "npm run test:unit && npm run test:e2e && npm run test:performance",
     "test:unit": "wct --config-file ./wct.local.conf.json",
     "test:e2e": "npm run test:server:start && npm run test:e2e:chrome && npm run test:e2e:firefox",
     "test:e2e:grid": "npm run test:server:start && npm run test:e2e:chrome:grid && npm run test:e2e:firefox:grid",
@@ -37,6 +37,7 @@
     "test:e2e:firefox:grid": "mocha --firefox --grid",
     "test:e2e:opera": "mocha --opera",
     "test:e2e:safari": "mocha --safari",
+    "test:performance": "docker-compose -f docker-compose-performance-chrome.yml up --exit-code-from sitespeed-chrome && docker-compose -f docker-compose-performance-firefox.yml up --exit-code-from sitespeed-firefox",
     "test:server:start": "http-server &",
     "release": "np",
     "release:prepare": "npm explore vl-ui-util -- npm run release-component:prepare $(pwd) button",
@@ -58,6 +59,6 @@
     "@govflanders/vl-ui-link": "3.9.1",
     "@govflanders/vl-ui-util": "3.9.1",
     "vl-ui-icon": "^4.0.1",
-    "vl-ui-util": "^5.0.8"
+    "vl-ui-util": "^5.1.4"
   }
 }
