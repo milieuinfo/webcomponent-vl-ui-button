@@ -16,7 +16,7 @@ services:
       - ./performance/scripts:/sitespeed.io/scripts/
       - ./performance/results/firefox/:/sitespeed.io/firefox-results/
   demo:
-    image: ${DOCKER_REGISTRY}milieuinfo/node:12
+    image: ${DOCKER_REGISTRY}milieuinfo/node:13
     container_name: demo
     environment:
       - http_proxy=${http_proxy}
