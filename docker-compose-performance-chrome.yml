@@ -29,7 +29,7 @@ services:
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"
     working_dir: /home/node/app
-    entrypoint: bash -c "npm install && npm run demo"
+    entrypoint: bash -c "npm install --verbose && npm run demo"
     volumes:
       - .:/home/node/app
 
