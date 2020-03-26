@@ -26,7 +26,7 @@ module.exports = async function (context, commands) {
                             if (demoComponents) {
                                 resolve();
                             } else {
-                                throw e;
+                                process.exit(5);
                             }
                         } catch (e){
                             throw e;
