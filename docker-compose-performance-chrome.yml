@@ -2,14 +2,14 @@ version: "3"
 services:
   sitespeed-chrome:
     image: ${DOCKER_REGISTRY}sitespeedio/sitespeed.io
-    command: "--config ./config/config-chrome.json --verbose --preScript ./scripts/preScript.js http://demo.app.io:8080/demo/performance.html"
+    command: "--config ./config/config-chrome.json --preScript ./scripts/preScript.js http://demo.app.io:8080/demo/performance.html"
     environment:
       - http_proxy=${http_proxy}
       - https_proxy=${https_proxy}
       - no_proxy=${no_proxy}
       - HTTP_PROXY=${http_proxy}
       - HTTPS_PROXY=${https_proxy}
-      - NO_PROXY=${no_proxy}
+      - NO_PROXY=${no_proxy},demo.app.io
     shm_size: 2g
     volumes:
       - ./performance/config:/sitespeed.io/config/
@@ -24,7 +24,7 @@ services:
       - no_proxy=${no_proxy}
       - HTTP_PROXY=${http_proxy}
       - HTTPS_PROXY=${https_proxy}
-      - NO_PROXY=${no_proxy}
+      - NO_PROXY=${no_proxy},demo.app.io
     hostname: demo.app.io
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"

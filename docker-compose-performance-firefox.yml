@@ -2,30 +2,30 @@ version: "3"
 services:
   sitespeed-firefox:
     image: ${DOCKER_REGISTRY}sitespeedio/sitespeed.io
-    command: "--config ./config/config-firefox.json --preScript ./scripts/preScript.js http://demo:8080/demo/performance.html"
+    command: "--config ./config/config-firefox.json --preScript ./scripts/preScript.js http://demo.app.io:8080/demo/performance.html"
     environment:
       - http_proxy=${http_proxy}
       - https_proxy=${https_proxy}
       - no_proxy=${no_proxy}
       - HTTP_PROXY=${http_proxy}
       - HTTPS_PROXY=${https_proxy}
-      - NO_PROXY=${no_proxy}
+      - NO_PROXY=${no_proxy},demo.app.io
     shm_size: 2g
     volumes:
       - ./performance/config:/sitespeed.io/config/
       - ./performance/scripts:/sitespeed.io/scripts/
       - ./performance/results/firefox/:/sitespeed.io/firefox-results/
-  demo:
+  demo.app.io:
     image: ${DOCKER_REGISTRY}milieuinfo/node:13
-    container_name: demo
+    container_name: demo.app.io
     environment:
       - http_proxy=${http_proxy}
       - https_proxy=${https_proxy}
       - no_proxy=${no_proxy}
       - HTTP_PROXY=${http_proxy}
       - HTTPS_PROXY=${https_proxy}
-      - NO_PROXY=${no_proxy}
-    hostname: demo
+      - NO_PROXY=${no_proxy},demo.app.io
+    hostname: demo.app.io
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"
     working_dir: /home/node/app
