@@ -1,6 +1,10 @@
 {
     "browsertime": {
-        "browser": "chrome"
+        "browser": "chrome",
+        "proxy": {
+          "http": "http://forwardproxy-pr.lb.cumuli.be:3128",
+          "https": "http://forwardproxy-pr.lb.cumuli.be:3128"
+          },  
     },
     "budget": {
         "configPath": "/sitespeed.io/config/budget.json",

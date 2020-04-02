@@ -3,6 +3,7 @@ services:
   sitespeed-chrome:
     image: ${DOCKER_REGISTRY}sitespeedio/sitespeed.io
     command: "--config ./config/config-chrome.json -vvv --preScript ./scripts/preScript.js http://demo.app.io:8080/demo/performance.html"
+    container_name: sitespeed-chrome
     environment:
       - http_proxy=${http_proxy}
       - https_proxy=${https_proxy}
@@ -13,7 +14,7 @@ services:
     shm_size: 2g
     volumes:
       - ./performance/config:/sitespeed.io/config/
-      - ./performance/scripts:/sitespeed.io/scripts/  
+      - ./performance/scripts:/sitespeed.io/scripts/
       - ./performance/results/chrome/:/sitespeed.io/chrome-results/
   demo.app.io:
     image: ${DOCKER_REGISTRY}milieuinfo/acd-node:13
@@ -32,4 +33,3 @@ services:
     entrypoint: bash -c "npm install --verbose && npm run demo"
     volumes:
       - .:/home/node/app
-
