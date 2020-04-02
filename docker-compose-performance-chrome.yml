@@ -27,10 +27,9 @@ services:
       - HTTPS_PROXY=${https_proxy}
       - NO_PROXY=${no_proxy},demo.app.io
     hostname: demo.app.io
-    user: node
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"
     working_dir: /home/node/app
-    entrypoint: bash -c "sudo chown -R node:node /home/node/app/* && npm install --verbose && npm run demo"
+    entrypoint: bash -c "npm install --unsafe-perms --verbose && npm run demo"
     volumes:
       - .:/home/node/app
