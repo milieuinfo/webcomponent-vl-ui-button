@@ -30,6 +30,7 @@ services:
     extra_hosts:
       - "repository.milieuinfo.be:${REPOSITORY_FIXED_IP}"
     working_dir: /home/node/app
-    entrypoint: bash -c "cp -R /data/. /home/node/app && npm install --unsafe-perms --verbose && npm run demo"
+    entrypoint: bash -c "cp -R /data/. /home/node/app && npm install && npm run demo"
     volumes:
       - .:/data:ro
+      - ./performance/results:/home/node/app/performance/results
