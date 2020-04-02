@@ -32,4 +32,4 @@ services:
     working_dir: /home/node/app
     entrypoint: bash -c "cp -R /data/. /home/node/app && npm install --unsafe-perms --verbose && npm run demo"
     volumes:
-      - .:/home/node/app:ro
+      - .:/data:ro
