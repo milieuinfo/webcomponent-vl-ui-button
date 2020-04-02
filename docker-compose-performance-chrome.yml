@@ -17,7 +17,7 @@ services:
       - ./performance/scripts:/sitespeed.io/scripts/
       - ./performance/results/chrome/:/sitespeed.io/chrome-results/
   demo.app.io:
-    image: ${DOCKER_REGISTRY}milieuinfo/acd-node:13
+    image: ${DOCKER_REGISTRY}milieuinfo/node:13
     container_name: demo.app.io
     environment:
       - http_proxy=${http_proxy}
