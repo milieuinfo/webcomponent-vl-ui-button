@@ -2,7 +2,6 @@ const http = require('http');
 
 module.exports = async function (context, commands) {
 
-    context.log.info("==================== Running prescript")
     const hostname = 'demo.app.io';
     const port = '8080';
     const path = 'demo/performance.html';
@@ -20,7 +19,6 @@ module.exports = async function (context, commands) {
             setTimeout(async () => {
                 http.get(`http://${hostname}:${port}`, async (res) => {
                     const { statusCode } = res;
-                    context.log.info("======================== Statuscode: " + statusCode);
                     if (statusCode === 200) {
                         context.log.info(`App available on ${hostname}:${port}.`);
                         try {
