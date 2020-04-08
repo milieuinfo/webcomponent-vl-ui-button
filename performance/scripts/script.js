@@ -1,3 +1,5 @@
+const http = require('http');
+
 async function setUp(context, commands) {
     const hostname = 'demo.app.io';
     const port = '8080';
@@ -54,6 +56,6 @@ module.exports = async function (context, commands) {
         await commands.navigate('http://demo.app.io:8080/demo/performance.html');
         await commands.measure.stop();
     } catch (e) {
-        
+
     }
 }
