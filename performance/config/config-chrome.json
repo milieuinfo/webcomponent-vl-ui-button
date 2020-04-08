@@ -1,6 +1,7 @@
 {
     "browsertime": {
-        "browser": "chrome"
+        "browser": "chrome",
+        "spa": true
     },
     "outputFolder": "results/chrome"
 }
