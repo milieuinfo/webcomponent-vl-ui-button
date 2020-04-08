@@ -19,7 +19,6 @@ async function setUp(context, commands) {
                 http.get(`http://${hostname}:${port}`, async (res) => {
                     const { statusCode } = res;
                     if (statusCode === 200) {
-                        context.log.info(`App available on ${hostname}:${port}.`);
                         try {
                             const demoComponents = await areDemoComponentsPresent();
                             if (demoComponents) {
@@ -34,7 +33,6 @@ async function setUp(context, commands) {
                         poll();
                     }
                 }).on('error', () => {
-                    context.log.error(`App not yet available on ${hostname}:${port}.`);
                     poll();
                 });
             }, 5000);
