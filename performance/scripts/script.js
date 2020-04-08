@@ -42,16 +42,18 @@ async function setUp(context, commands) {
     });
 }
 
-async function runTest(context, commands) {
+module.exports = async function (context, commands) {
+    context.log.info("Waiting for webserver to start up ... ");
+    await setUp();
+    context.log.info("Webserver started!");
+
     context.log.info("Starting script");
     await commands.measure.start('http://demo.app.io:8080/demo/performance.html');
     await commands.measure.start('Webcomponents');
-    await commands.navigate('http://demo.app.io:8080/demo/performance.html');
-    context.log.info("Script done");
-    return commands.measure.stop();
+    try {
+        await commands.navigate('http://demo.app.io:8080/demo/performance.html');
+        await commands.measure.stop();
+    } catch (e) {
+        
+    }
 }
-
-module.exports = {
-    setUp: setUp,
-    test: runTest
-};
