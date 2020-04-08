@@ -14,7 +14,7 @@ services:
     volumes:
       - ./performance/config:/sitespeed.io/config/
       - ./performance/scripts:/sitespeed.io/scripts/
-      - ./performance/results/firefox/:/sitespeed.io/firefox-results/
+      - ./performance/results/:/sitespeed.io/results/
   demo.app.io:
     image: ${DOCKER_REGISTRY}milieuinfo/node:13
     container_name: demo.app.io

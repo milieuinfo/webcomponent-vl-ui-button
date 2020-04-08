@@ -2,7 +2,7 @@ version: "3"
 services:
   sitespeed-chrome:
     image: ${DOCKER_REGISTRY}sitespeedio/sitespeed.io
-    command: "--config ./config/config-chrome.json --preScript ./scripts/preScript.js http://demo.app.io:8080/demo/performance.html"
+    command: "--config ./config/config-chrome.json ./scripts/script.js"
     container_name: sitespeed-chrome
     environment:
       - http_proxy=${http_proxy}
