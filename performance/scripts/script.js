@@ -20,16 +20,17 @@ async function setUp(context, commands) {
                     const { statusCode } = res;
                     if (statusCode === 200) {
                         context.log.info(`App available on ${hostname}:${port}.`);
-                        try {
-                            const demoComponents = await areDemoComponentsPresent();
-                            if (demoComponents) {
-                                resolve();
-                            } else {
-                                process.exit(5);
-                            }
-                        } catch (e){
-                            throw e;
-                        }
+                        resolve();
+                        // try {
+                        //     const demoComponents = await areDemoComponentsPresent();
+                        //     if (demoComponents) {
+                        //         resolve();
+                        //     } else {
+                        //         process.exit(5);
+                        //     }
+                        // } catch (e){
+                        //     throw e;
+                        // }
                     } else {
                         poll();
                     }
