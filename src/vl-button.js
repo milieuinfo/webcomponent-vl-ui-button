@@ -25,8 +25,8 @@ export const VlButtonElement = (SuperClass) => {
             const icon = this.querySelector('[is="vl-icon"]');
             if (icon) {
                 let suffix = '';
-                suffix += icon.hasAttribute('before') ? '-before' : '';
-                suffix += icon.hasAttribute('after') ? '-after' : '';
+                suffix += icon.hasAttribute('data-vl-before') || icon.hasAttribute('before') ? '-before' : '';
+                suffix += icon.hasAttribute('data-vl-after') || icon.hasAttribute('after') ? '-after' : '';
                 this.classList.add(this._classPrefix + 'icon' + suffix);
                 icon.classList.add('vl-button__icon');
                 if (suffix) {
