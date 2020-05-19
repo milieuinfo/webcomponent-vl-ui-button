@@ -17,10 +17,6 @@
     </template>
   </test-fixture>
 
-  
-
-  
-
   <test-fixture id="vl-button-with-icon-fixture">
     <template>
       <button is="vl-button">
@@ -53,8 +49,6 @@
 
   <script>
     suite('<vl-button>', () => {
-      const should = chai.should();
-
       test('heeft de vl-button class', () => {
         const button = fixture('vl-button-fixture');
         assert.isTrue(button.classList.contains('vl-button'));
@@ -99,8 +93,6 @@
     });
 
     suite('<vl-link-button>', () => {
-      const should = chai.should();
-
       test('heeft de vl-button class', () => {
         const linkButton = fixture('vl-link-button-fixture');
         assert.isTrue(linkButton.classList.contains('vl-button'));

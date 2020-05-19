@@ -1,78 +1,78 @@
-const { VlButton, VlLinkButton } = require('../components/vl-button');
-const { Page, Config } = require('vl-ui-core').Test;
+const {VlButton, VlLinkButton} = require('../components/vl-button');
+const {Page, Config} = require('vl-ui-core').Test;
 
 class VlButtonPage extends Page {
-    async _getButton(selector) {
-        return new VlButton(this.driver, selector);
-    }
+  async _getButton(selector) {
+    return new VlButton(this.driver, selector);
+  }
 
-    async _getLinkButton(selector) {
-        return new VlLinkButton(this.driver, selector);
-    }
-   
-    async getPrimaryButton() {
-        return this._getButton('#button-primary');
-    }
+  async _getLinkButton(selector) {
+    return new VlLinkButton(this.driver, selector);
+  }
 
-    async getDisabledButton() {
-        return this._getButton('#button-disabled');
-    }
+  async getPrimaryButton() {
+    return this._getButton('#button-primary');
+  }
 
-    async getErrorButton() {
-        return this._getButton('#button-error');
-    }
+  async getDisabledButton() {
+    return this._getButton('#button-disabled');
+  }
 
-    async getIconBeforeButton() {
-        return this._getButton('#button-icon-before');
-    }
+  async getErrorButton() {
+    return this._getButton('#button-error');
+  }
 
-    async getIconAfterButton() {
-        return this._getButton('#button-icon-after');
-    }
+  async getIconBeforeButton() {
+    return this._getButton('#button-icon-before');
+  }
 
-    async getIconAfterButton() {
-        return this._getButton('#button-icon-after');
-    }
+  async getIconAfterButton() {
+    return this._getButton('#button-icon-after');
+  }
 
-    async getBlockButton() {
-        return this._getButton('#button-block');
-    }
+  async getIconAfterButton() {
+    return this._getButton('#button-icon-after');
+  }
 
-    async getLargeButton() {
-        return this._getButton('#button-large');
-    }
+  async getBlockButton() {
+    return this._getButton('#button-block');
+  }
 
-    async getWideButton() {
-        return this._getButton('#button-wide');
-    }
+  async getLargeButton() {
+    return this._getButton('#button-large');
+  }
 
-    async getNarrowButton() {
-        return this._getButton('#button-narrow');
-    }
+  async getWideButton() {
+    return this._getButton('#button-wide');
+  }
 
-    async getLoadingButton() {
-        return this._getButton('#button-loading');
-    }
+  async getNarrowButton() {
+    return this._getButton('#button-narrow');
+  }
 
-    async getSecondaryButton() {
-        return this._getButton('#button-secondary');
-    }
+  async getLoadingButton() {
+    return this._getButton('#button-loading');
+  }
 
-    async getTertiaryButton() {
-        return this._getButton('#button-tertiary');
-    }
+  async getSecondaryButton() {
+    return this._getButton('#button-secondary');
+  }
 
-    async getIconButton() {
-        return this._getButton('#button-icon');
-    }
+  async getTertiaryButton() {
+    return this._getButton('#button-tertiary');
+  }
 
-    async getLinkButton() {
-        return this._getLinkButton('#button-a-link');
-    }
+  async getIconButton() {
+    return this._getButton('#button-icon');
+  }
 
-    async load() {
-        await super.load(Config.baseUrl + '/demo/vl-button.html');
-    }
+  async getLinkButton() {
+    return this._getLinkButton('#button-a-link');
+  }
+
+  async load() {
+    await super.load(Config.baseUrl + '/demo/vl-button.html');
+  }
 }
 
 module.exports = VlButtonPage;
