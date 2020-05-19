@@ -1,7 +1,7 @@
-import {NativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
 
-export const VlButtonElement = (SuperClass) => {
-  return class extends NativeVlElement(SuperClass) {
+export const vlButtonElement = (SuperClass) => {
+  return class extends nativeVlElement(SuperClass) {
     static get _observedAttributes() {
       return [];
     }
@@ -42,7 +42,7 @@ export const VlButtonElement = (SuperClass) => {
 /**
  * VlButton
  * @class
- * @classdesc Gebruik de vl-button om een ​​call-to-action toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
+ * @classdesc Gebruik de vl-button om een CTA toe te voegen. Het type call-to-action wordt bepaald door het label of de pictogram.
  *
  * @extends NativeVlElement
  *
@@ -60,12 +60,12 @@ export const VlButtonElement = (SuperClass) => {
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html|Demo}
  */
-export class VlButton extends VlButtonElement(HTMLButtonElement) { }
+export class VlButton extends vlButtonElement(HTMLButtonElement) { }
 
 /**
  * VlLinkButton
  * @class
- * @classdesc Gebruik de vl-link-button om een ​​call-to-action toe te voegen.
+ * @classdesc Gebruik de vl-link-button om een CTA toe te voegen.
  *
  * @extends NativeVlElement
  *
@@ -73,7 +73,7 @@ export class VlButton extends VlButtonElement(HTMLButtonElement) { }
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-link.html|Demo}
  */
-export class VlLinkButton extends VlButtonElement(HTMLAnchorElement) { }
+export class VlLinkButton extends vlButtonElement(HTMLAnchorElement) { }
 
 define('vl-button', VlButton, {extends: 'button'});
 define('vl-link-button', VlLinkButton, {extends: 'a'});
