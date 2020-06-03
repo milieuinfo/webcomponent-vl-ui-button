@@ -70,7 +70,8 @@ export class VlButton extends vlButtonElement(HTMLButtonElement) { }
  * @class
  * @classdesc Gebruik de vl-link-button om een CTA toe te voegen.
  *
- * @extends NativeVlElement
+ * @extends HTMLAnchorElement
+ * @mixin nativeVlElement
  *
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/releases/latest|Release notes}
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
