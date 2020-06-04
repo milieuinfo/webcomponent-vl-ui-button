@@ -50,11 +50,6 @@ class VlButtonElement extends VlElement {
       return false;
     }
   }
-
-  async getText() {
-    const text = await super.getText();
-    return text.trim();
-  }
 }
 
 class VlButton extends VlButtonElement { }
