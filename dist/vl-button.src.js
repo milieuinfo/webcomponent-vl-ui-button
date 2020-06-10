@@ -1,4 +1,4 @@
-import {nativeVlElement, define} from vl-ui-core;
+import {nativeVlElement, define} from 'vl-ui-core';
 
 export const vlButtonElement = (SuperClass) => {
   return class extends nativeVlElement(SuperClass) {
