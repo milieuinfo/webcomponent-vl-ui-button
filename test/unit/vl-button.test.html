@@ -48,7 +48,7 @@
   </test-fixture>
 
   <script>
-    suite('<vl-button>', () => {
+    suite('vl-button', () => {
       test('heeft de vl-button class', () => {
         const button = fixture('vl-button-fixture');
         assert.isTrue(button.classList.contains('vl-button'));
@@ -58,9 +58,9 @@
         const button = fixture('vl-button-fixture');
         ['disabled', 'error', 'block', 'large', 'wide', 'narrow', 'secondary', 'tertiary'].forEach((attribuut) => {
           assert.isFalse(button.classList.contains('vl-button--' + attribuut));
-          button.setAttribute(attribuut, '');
+          button.setAttribute(`data-vl-${attribuut}`, '');
           assert.isTrue(button.classList.contains('vl-button--' + attribuut));
-          button.removeAttribute(attribuut);
+          button.removeAttribute(`data-vl-${attribuut}`);
           assert.isFalse(button.classList.contains('vl-button--' + attribuut));
         });
       });
@@ -91,7 +91,7 @@
       });
     });
 
-    suite('<vl-link-button>', () => {
+    suite('vl-link-button', () => {
       test('heeft de vl-button class', () => {
         const linkButton = fixture('vl-link-button-fixture');
         assert.isTrue(linkButton.classList.contains('vl-button'));
