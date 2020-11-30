@@ -1,11 +1,12 @@
 
-const {assert, driver} = require('vl-ui-core').Test.Setup;
+const {assert, getDriver} = require('vl-ui-core').Test.Setup;
 const VlButtonPage = require('./pages/vl-button.page');
 
 describe('vl-button', async () => {
-  const vlButtonPage = new VlButtonPage(driver);
+  let vlButtonPage;
 
-  before(async () => {
+  before(() => {
+    vlButtonPage = new VlButtonPage(getDriver());
     return vlButtonPage.load();
   });
 
