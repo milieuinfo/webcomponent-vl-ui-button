@@ -41,7 +41,7 @@
     "vl-ui-link": "^4.0.7"
   },
   "peerDependencies": {
-    "vl-ui-core": "7.0.2",
+    "vl-ui-core": "7.0.3",
     "vl-ui-link": "4.0.7"
   },
   "devDependencies": {
