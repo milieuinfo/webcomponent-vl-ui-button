@@ -104,15 +104,6 @@ describe('vl-button', async () => {
     await assert.eventually.isTrue(tertiaryButton.isTertiary());
   });
 
-  it('als gebruiker wil ik een knop kunnen zien met alleen maar een icoon', async () => {
-    const primaryButton = await vlButtonPage.getPrimaryButton();
-    const iconButton = await vlButtonPage.getIconButton();
-    await assert.eventually.equal(primaryButton.hasText(), true);
-    await assert.eventually.equal(primaryButton.hasIcon(), false);
-    await assert.eventually.equal(iconButton.hasText(), false);
-    await assert.eventually.equal(iconButton.hasIcon(), true);
-  });
-
   it('als gebruiker zie ik een link button', async () => {
     const linkButton = await vlButtonPage.getLinkButton();
     await assert.eventually.isTrue(linkButton.isDisplayed());
