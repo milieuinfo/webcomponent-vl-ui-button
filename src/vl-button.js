@@ -56,7 +56,6 @@ export const VlButtonElement = vlButtonElement;
  * @extends HTMLButtonElement
  * @mixes vlButtonElement
  *
- * @property {boolean} data-vl-disabled - Attribuut wordt gebruikt om aan de gebruiker aan te duiden dat de functionaliteit niet actief is.
  * @property {boolean} data-vl-error - Attribuut wordt gebruikt om het belang of de gevolgen van een actie te benadrukken.
  * @property {boolean} data-vl-block - Attribuut wordt gebruikt om ervoor te zorgen dat de knop getoond wordt als een block element en bijgevol de breedte van de parent zal aannemen.
  * @property {boolean} data-vl-large - Attribuut wordt gebruikt om de aandacht van de gebruiker te trekken door de font-size te vergroten.
