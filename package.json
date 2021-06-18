@@ -53,6 +53,6 @@
     "axe-webdriverjs": "^2.3.0",
     "vl-ui-body": "^1.0.8",
     "vl-ui-icon": "^5.2.2",
-    "vl-ui-util": "^5.3.12"
+    "vl-ui-util": "^5.4.2"
   }
 }
