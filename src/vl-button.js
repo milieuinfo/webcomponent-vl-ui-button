@@ -1,4 +1,4 @@
-import {nativeVlElement, define} from '/node_modules/vl-ui-core/dist/vl-core.js';
+import { nativeVlElement, define } from '/node_modules/vl-ui-core/dist/vl-core.js';
 
 /**
  * Gebruik de button mixin in combinatie met button elementen.
@@ -69,7 +69,7 @@ export const VlButtonElement = vlButtonElement;
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-button/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-button.html|Demo}
  */
-export class VlButton extends vlButtonElement(HTMLButtonElement) { }
+export class VlButton extends vlButtonElement(HTMLButtonElement) {}
 
 /**
  * VlLinkButton
@@ -82,7 +82,7 @@ export class VlButton extends vlButtonElement(HTMLButtonElement) { }
  * @see {@link https://www.github.com/milieuinfo/webcomponent-vl-ui-link/issues|Issues}
  * @see {@link https://webcomponenten.omgeving.vlaanderen.be/demo/vl-link.html|Demo}
  */
-export class VlLinkButton extends vlButtonElement(HTMLAnchorElement) { }
+export class VlLinkButton extends vlButtonElement(HTMLAnchorElement) {}
 
-define('vl-button', VlButton, {extends: 'button'});
-define('vl-link-button', VlLinkButton, {extends: 'a'});
+define('vl-button', VlButton, { extends: 'button' });
+define('vl-link-button', VlLinkButton, { extends: 'a' });
